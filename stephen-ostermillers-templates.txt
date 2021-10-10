@@ -1,5 +1,5 @@
 # Too much code
-I voted to close this question because the code sample is too long.   Please [edit] your post to pare your code down to a [minimal, complete, readable, and reproducable example](/help/minimal-reproducible-example)
+I voted to close this question because the code sample is too long.   Please [edit] your post to pare your code down to a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example)
 sites: stackoverflow
 types: close-question
 
