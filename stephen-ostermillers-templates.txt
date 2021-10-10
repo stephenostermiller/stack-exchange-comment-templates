@@ -2,7 +2,7 @@
 General SEO questions are off-topic. Only programming-related SEO questions are acceptable on Stack Overflow. Non-programming SEO questions should be asked on [webmasters.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
 tags: seo
-types: question
+types: close-question, question
 
 # More than one question asked
 I voted to close this post because it asks more than one question. It is preferred if you can post separate questions instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will find the answer. Please [edit] this post to pare it down to a single question and create separate posts for additional questions.
