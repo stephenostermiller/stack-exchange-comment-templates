@@ -1,0 +1,212 @@
+# SEO off-topic
+General SEO questions are off-topic. Only programming-related SEO questions are acceptable on Stack Overflow. Non-programming SEO questions should be asked on [webmasters.se]. Please delete your question here and re-ask it there.
+sites: stackoverflow
+tags: seo
+types: question
+
+# More than one question asked
+I voted to close this post because it asks more than one question. It is preferred if you can post separate questions instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will find the answer. Please [edit] this post to pare it down to a single question and create separate posts for additional questions.
+types: close, question
+users: user
+
+# More than one question asked
+I closed this post because it asks more than one question. It is preferred if you can post separate questions instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will find the answer. Please [edit] this post to pare it down to a single question and create separate posts for additional questions.
+types: close, question
+users: moderators
+
+# Closed then asked again
+In the future, please edit a closed question rather than asking it again. It is not appropriate to ask your question a second time. Instead you need to edit your original question so that it can be reopened. When you edit a closed question it automatically enters a review queue to see if it should be reopened.
+types: question
+
+# Needs details
+Please [edit] your question to provide the requested details so that this can be reopened and answered.
+types: question
+
+# Off-topic not webmastering
+I voted to close this question because it appears to be about [type here] and not related to running your own website.
+types: close, question
+sites: webmasters
+
+# Off-topic programming
+I voted to close this question because programming questions are off-topic here and should be asked on [so]. Before you ask there, you need to make your example minimal. You need to pare it down to just a small section of no more than 10 lines that demonstrates the problem.
+types: close, question
+sites: webmasters
+
+# Resolved without answers
+I voted to close this question because you indicate that you resolved the problem without receiving any answers.
+types: close, question
+users: user
+
+# Resolved without answers
+I closed this question because you indicate that you resolved the problem without receiving any answers.
+types: close, question
+users: moderator
+
+# Text screenshots
+Please [edit] this question to type the text from the screenshot. Then people answering the question will be able to quote the text or suggest corrections to it. Text will be able to be found through search. As it stands now, your screenshots make it hard to answer your question or for people with related issues to find your question.
+types: close, question
+
+# Comment as answer
+That should be posted as an answer rather than as a comment. Comments are temporary and cannot be accepted as an answer. There is no mechanism for converting comments to answers, so I cannot do it for you. You will need to copy your comment into the answer box and then delete your comment.
+types: question
+
+# Meta title
+There is no such thing as a "meta title." The page title uses the `<title>` tag which is separate from `<meta>` tags. Furthermore, unlike meta information about the page, the page title is visible to users in the browser tab and title bar. I've edited your question to correct the terminology.
+types: question
+sites: webmasters
+
+# XML sitemap SEO
+XML sitemaps have almost nothing to do with SEO. They don't help your pages rank better and they rarely get search engines to index pages they wouldn't index anyway. At best sitemaps get search engine crawlers to crawl new pages quickly and give you extra stats in webmaster tools and search console. See [The Sitemap Paradox](/questions/4803/the-sitemap-paradox)
+types: question
+sites: webmasters
+
+# Structured data SEO
+You don't need to find some structured data to apply for SEO. Unless there is relevant structured data for which Google supports a rich snippet, there is no reason to use any structured data at all. See my blog [SEO Myth: Structured data helps search engine rankings](//blog.ostermiller.org/structured-data-seo/)
+types: question
+sites: webmasters
+
+# Question as answer
+I deleted this because it does not answer the question. You can [search for similar questions](/search), or refer to the related and linked questions on this page to find an answer. If you have your own question which is different from the one asked here, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
+types: answer
+
+# Thank you answer
+I [deleted](/help/deleted-answers) this because it is only a “thank you” and not an answer. Once you [earn](//meta.stackoverflow.com/q/146472) enough [reputation](/help/whats-reputation), you will gain privileges to [upvote answers](/help/privileges/vote-up). Then visitors see a higher vote count on that answer, and the author will be rewarded with reputation points. See [Why is voting important](/help/why-vote).
+types: answer
+users: moderator
+
+# Thank you answer
+I flagged this for [deletion](/help/deleted-answers) because it is only a “thank you” and not an answer. Once you [earn](//meta.stackoverflow.com/q/146472) enough [reputation](/help/whats-reputation), you will gain privileges to [upvote answers](/help/privileges/vote-up).  Then visitors see a higher vote count on that answer, and the author will be rewarded with reputation points. See [Why is voting important](/help/why-vote).
+types: answer
+users: user
+
+# Link-only answer
+I [deleted](/help/deleted-answers) this because it consists almost entirely of a link. A link to a solution is welcome, but please ensure your answer is useful without it: [add context around the link](//meta.stackexchange.com/a/8259) so your fellow users will have some idea what it is and why it’s there, then quote the most relevant part of the page you're linking to in case the target page is unavailable. If you [edit] this answer to add more, please flag it for moderator attention so that we can un-delete it.
+types: answer
+users: moderator
+
+# Link-only answer
+I flagged this for [deletion](/help/deleted-answers) this because it consists almost entirely of a link. A link to a solution is welcome, but please ensure your answer is useful without it: [add context around the link](//meta.stackexchange.com/a/8259) so your fellow users will have some idea what it is and why it’s there, then quote the most relevant part of the page you're linking to in case the target page is unavailable. If you [edit] this answer to add more once it is deleted, please flag it for moderator attention so that it can be un-deleted.
+types: answer
+users: user
+
+# Code-only answer
+[A code-only answer is not high quality](//meta.stackoverflow.com/questions/392712/explaining-entirely-code-based-answers). While this code may be useful, you can improve it by saying why it works, how it works, when it should be used, and what its limitations are. Please [edit] your answer to include explanation and link to relevant documentation.
+types: answer
+sites: stackoverflow
+
+# "Me too!" answer
+I [deleted](/help/deleted-answers) this because it is not an answer to the question. If you're interested in this specific question, you can click the “follow” link to receive notifications of new answers. Once you have enough [reputation](/help/whats-reputation), you can [upvote](/help/privileges/vote-up) it, or create a [bounty](/help/privileges/set-bounties) to attract more attention to it. If you have a different but related question then [ask](/questions/ask) it. You can reference this one if it would help provide context.
+types: answer
+users: moderators
+
+# "Me too!" answer
+I flagged this for [deletion](/help/deleted-answers) because it is not an answer to the question. If you're interested in this specific question, you can click the “follow” link to receive notifications of new answers. Once you have enough [reputation](/help/whats-reputation), you can [upvote](/help/privileges/vote-up) it, or create a [bounty](/help/privileges/set-bounties) to attract more attention to it. If you have a different but related question then [ask](/questions/ask) it. You can reference this one if it would help provide context.
+types: answer
+users: user
+
+# Converted to comment
+I have converted this to a comment for you. Once you get 50 reputation points, you will be able to [post comments yourself](/privileges/comment).
+types: answer
+users: moderator
+
+# OP answered with edits
+I [deleted](/help/deleted-answers) this because it is not an answer to the question. Please modify your original question to add this additional information by clicking on the [edit link](/posts/$QUESTIONID/edit) under the question.
+types: answer
+users: moderator
+
+# OP answered with edits
+I flagged this for [deletion](/help/deleted-answers) because it is not an answer to the question. Please modify your original question to add this additional information by clicking on the [edit link](/posts/$QUESTIONID/edit) under the question.
+types: answer
+users: user
+
+# Plagiarism
+I [deleted](/help/deleted-answers) this because [too much is copied and pasted from other sources](/help/referencing). Please limit the amount of content copied from other sources to just a few sentences that can be defended as “fair use” for copyright purposes. Use quote formatting and a link back to the original when using a third party snippet. Always include your own unique commentary alongside any quoted material. If you [edit] to remove the plagiarism, please flag for moderator attention so that we can un-delete.
+types: answer, question
+users: moderator
+
+# Plagiarism
+I flagged this for [deletion](/help/deleted-answers) because [too much is copied and pasted from other sources](/help/referencing). Please limit the amount of content copied from other sources to just a few sentences that can be defended as “fair use” for copyright purposes. Use quote formatting and a link back to the original when using a third party snippet. Always include your own unique commentary alongside any quoted material. If your post has already been deleted when you [edit] to remove the plagiarism, please flag for moderator attention so that it can be un-deleted.
+types: answer, question
+users: user
+
+# Cross posted
+I [deleted](/help/deleted-answers) this because it was cross-posted to multiple Stack Exchange sites.   [Cross-posting the same question to multiple sites is not allowed](//meta.stackexchange.com/a/64069/138432). Please ask just on one site and flag your question to be moved if you later think it would be better on another.
+types: question
+users: moderator
+
+# Cross posted
+I flagged this for [deletion](/help/deleted-answers) because  it was cross-posted to multiple Stack Exchange sites.   [Cross-posting the same question to multiple sites is not allowed](//meta.stackexchange.com/a/64069/138432). Please ask just on one site and flag your question to be moved if you later think it would be better on another.
+types: question
+users: user
+
+# Unregistered
+Please consider [registering](/users/login) your account, which will [give you access](//meta.stackexchange.com/questions/44557/why-should-i-register-my-account) to more of the site's features.
+types: answer, question
+
+# Default username
+I suggest that you [edit your profile](/users/edit/current) and give yourself a name!
+types: answer, question
+
+# Discussion answer
+We're a little different from other sites; this isn't a discussion forum but a Q&A site. We reserve the answer space for answers. Please check out our short [tour]. Please [edit] this answer to more directly address the question.
+types: answer
+
+# The works
+Improve grammar, spelling, formatting, and clarity; use an approved example domain; better summarize the question in the title; remove irrelevant and add relevant tags.
+types: edit-question
+
+# The works
+Improve grammar, spelling, formatting, and clarity; use an approved example domain.
+types: edit-answer
+
+# Grammar
+Improve grammar
+types: edit-answer, edit-question
+
+# Spelling
+Improve spelling
+types: edit-answer, edit-question
+
+# Formatting
+Improve formatting
+types: edit-answer, edit-question
+
+# Clarity
+Improve clarity
+types: edit-answer, edit-question
+
+# Example domain
+Use an approved example domain
+types: edit-answer, edit-question
+
+# Question in title
+Better summarize the question in the title
+types: edit-question
+
+# Removed tags
+Remove irrelevant tags
+types: edit-question
+
+# Added tags
+Add relevant tags
+types: edit-question
+
+# Awful comment
+This comment is awful
+types: flag-comment
+
+# Awful question
+This question is awful
+types: flag-question
+
+# Awful answer
+This answer is awful
+types: flag-answer
+
+# Awful flag
+this flag is awful
+types: decline-flag
+
+# Great flag
+this flag is great
+types: helpful-flag
