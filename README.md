@@ -4,7 +4,8 @@ If you are tired of typing the same comments into Stack Exchange sites over and 
 
 ## Installation
 
-Install a user script extension for your browser such as Tampermonkey or Greasemonkey and then install context-menu.js within it.
+1. Install a user script extension for your browser such as [Tampermonkey](https://www.tampermonkey.net/).  [Greasy Fork](https://greasyfork.org/en) maintains a list of user script manager extensions that are available for various browsers.
+2. Install context-menu.js within your user script manager. It is easiest to press the "Install" button on the [Greasy Fork page for this extension](https://greasyfork.org/en/scripts/433721-stack-exchange-comment-template-context-menu).
 
 ## Getting started
 
@@ -12,7 +13,7 @@ Trigger a context menu on the field where you write a comment by right-clicking,
 
 ## Features
 
- - Right click on an empty comment field, or on the "Add a comment" link to bring up a context menu of comments that can be insterted.
+ - Right click on an empty comment field, or on the "Add a comment" link to bring up a context menu of comments that can be inserted.
  - Also works for edit notes, flags, and flag handling responses.
  - Does not show a context menu for comment boxes that have been filled in allowing you to use the standard context menu for features like spell check.
  - An import/export text file format
