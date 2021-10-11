@@ -208,10 +208,132 @@ types: flag-question
 This answer is awful
 types: flag-answer
 
-# Awful flag
-this flag is awful
+# Handled
+Thank you for bringing this to my attention.  I handled this situation.
+types: helpful-flag
+
+# No Migration use standard path
+There is a standard migration path available for that site. Please use that instead of flagging for moderator attention.
 types: decline-flag
 
-# Great flag
-this flag is great
-types: helpful-flag
+# No Migration no answers
+The post has no answers; the poster can just delete the question here, and reask it on the other site.
+types: decline-flag
+
+# No Migration bad post
+We do not migrate bad posts, as it most likely would be closed on the other site as well.
+
+# No Migration off-topic there
+This particular post is off-topic on the other site. Please read the on-topic page for the other site before flagging.
+types: decline-flag
+
+# No Migration already closed
+The question is already closed; you can delete the post here, and reask it on the other site.
+types: decline-flag
+
+# No Migration too old
+The post is too old to be migrated.
+types: decline-flag
+
+# No deletion has answers
+We do not delete questions once they have accrued answers, as the posted solutions may prove helpful to future visitors. Feel free to use the /contact page to request dissociation.
+types: decline-flag
+
+# Closed duplicate should ping
+Moderator flags must not be used to resolve wrong dupe closures. See this Q&A: https://meta.stackoverflow.com/q/291977. @ping the gold-badge user who closed the question in a comment to inform them.
+types: decline-flag
+
+# Closed duplicate should edit
+Moderator flags must not be used to resolve wrong dupe closures. Edit the post to clarify why it is not a duplicate; this will push it to the review queue where the post might get reopened.
+types: decline-flag
+
+# Closed duplicate should vote
+Moderator flags must not be used to resolve inaccuracies regarding dupe closures. Do vote to close/reopen the post as needed. Feel free to consult a gold-badge holder, if necessary.
+types: decline-flag
+
+# Closed should edit
+Moderator flags must not be used to resolve issues regarding question closures. Please edit the post to make it more on-topic. This will push it to the review queue where the post might get reopened.
+types: decline-flag
+
+# Vote to close
+Please vote to close the post using the standard reasons, instead of flagging for moderator attention.
+types: decline-flag
+
+# Vote to reopen
+Please vote to reopen if the post is on-topic, instead of flagging for moderator attention.
+types: decline-flag
+
+# Your edit to queue
+Thank you for the edit; it will now go to the reopen queue, where users can vote to reopen the post if it merits reopening.
+types: decline-flag
+
+# The edit to queue
+The edit will put the question in the reopen queue, where users can vote to reopen the post if it merits reopening.
+types: decline-flag
+
+# Use close reason
+Please use the standard close reason rather the "requires moderator attention" flags.
+types: decline-flag
+
+# Close as very low quality
+Use the VLQ flag on questions only for garbage posts that need immediate attention. For these posts, use the standard close reasons instead. See this answer: https://meta.stackoverflow.com/a/265764
+types: decline-flag
+
+# Wait for edits queue
+Please wait until the suggested edit queue is empty. You can suggest edits after that.
+types: decline-flag
+
+# No deletion third party site
+Moderators do not enforce third-party restrictions on content by deleting posts that are valid according to the Stack Overflow norms. Please raise a complaint on their site and follow up with it.
+types: decline-flag
+
+# No deletion third party close
+Moderators do not enforce third-party restrictions on content. Please use the standard close reasons and close the question if needed.
+types: decline-flag
+
+# No delition no restriction
+Moderators do not enforce those restrictions on content. Please use the standard close reasons and close the question if needed.
+types: decline-flag
+
+# Code-only should downvote
+Code-only answers are downvote-worthy, not flag-worthy. Please note that flags should not be used to indicate technical inaccuracies, or an altogether wrong answer.
+types: decline-flag
+
+# Rhetorical should edit
+Rhetorical questions must not be flagged; edit them and make them an answer instead. See this Q&A: http://meta.stackexchange.com/questions/131959
+types: decline-flag
+
+# It attemps to answer
+Attempts at solving the initial question should not be flagged. See this Q&A: https://meta.stackoverflow.com/questions/265552/when-to-flag-an-answer-as-not-an-answer
+types: decline-flag
+
+# It isn't link-only
+The post is not a link-only answer. See the 3rd image here: https://meta.stackexchange.com/questions/225370/your-answer-is-in-another-castle-when-is-an-answer-not-an-answer
+types: decline-flag
+
+# Can't reveal votes
+Moderators can’t see the individual votes on posts. Users are allowed to downvote based on their discretion. If you see a pattern, please feel free to flag.
+types: decline-flag
+
+# Can't accept answer
+Moderators cannot accept/unaccept an answer on behalf of the original poster.
+
+# Serial down votes
+Serial downvotes are reversed automatically. See this Q&A: https://meta.stackoverflow.com/questions/252270. If they aren’t reversed after 36 hours, please flag again.
+types: decline-flag
+
+# Serial up votes
+Serial upvotes are reversed automatically. See this Q&A: https://meta.stackoverflow.com/questions/252270. If they aren’t reversed after 36 hours, please flag again.
+types: decline-flag
+
+# Bounty expires soon
+The bounty expires in less than a day. It is easier to just wait it out and then close, rather than to refund it now.
+types: decline-flag
+
+# No bounty refund unanswered
+We do not refund bounties just because you did not receive any answers; bounties are used just to advertise questions only.
+types: decline-flag
+
+# No bounty refund
+We do not refund bounties for that reason; bounties are used just to advertise questions only.
+types: decline-flag
