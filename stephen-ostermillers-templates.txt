@@ -1,5 +1,10 @@
 # Too much code
-I voted to close this question because the code sample is too long.   Please [edit] your post to pare your code down to a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example)
+I voted to close this question because the code sample is too long. Please [edit] your post to pare your code down to a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example).
+sites: stackoverflow
+types: close-question
+
+# No code
+I voted to close this question because there is no example code. Please [edit] your post to include a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example).
 sites: stackoverflow
 types: close-question
 
@@ -80,7 +85,7 @@ types: answer
 users: moderator
 
 # Thank you answer
-I flagged this for [deletion](/help/deleted-answers) because it is only a “thank you” and not an answer. Once you [earn](//meta.stackoverflow.com/q/146472) enough [reputation](/help/whats-reputation), you will gain privileges to [upvote answers](/help/privileges/vote-up).  Then visitors see a higher vote count on that answer, and the author will be rewarded with reputation points. See [Why is voting important](/help/why-vote).
+I flagged this for [deletion](/help/deleted-answers) because it is only a “thank you” and not an answer. Once you [earn](//meta.stackoverflow.com/q/146472) enough [reputation](/help/whats-reputation), you will gain privileges to [upvote answers](/help/privileges/vote-up). Then visitors see a higher vote count on that answer, and the author will be rewarded with reputation points. See [Why is voting important](/help/why-vote).
 types: answer
 users: user
 
@@ -135,12 +140,12 @@ types: answer, question
 users: user
 
 # Cross posted
-I [deleted](/help/deleted-answers) this because it was cross-posted to multiple Stack Exchange sites.   [Cross-posting the same question to multiple sites is not allowed](//meta.stackexchange.com/a/64069/138432). Please ask just on one site and flag your question to be moved if you later think it would be better on another.
+I [deleted](/help/deleted-answers) this because it was cross-posted to multiple Stack Exchange sites. [Cross-posting the same question to multiple sites is not allowed](//meta.stackexchange.com/a/64069/138432). Please ask just on one site and flag your question to be moved if you later think it would be better on another.
 types: question
 users: moderator
 
 # Cross posted
-I flagged this for [deletion](/help/deleted-answers) because  it was cross-posted to multiple Stack Exchange sites.   [Cross-posting the same question to multiple sites is not allowed](//meta.stackexchange.com/a/64069/138432). Please ask just on one site and flag your question to be moved if you later think it would be better on another.
+I flagged this for [deletion](/help/deleted-answers) because it was cross-posted to multiple Stack Exchange sites. [Cross-posting the same question to multiple sites is not allowed](//meta.stackexchange.com/a/64069/138432). Please ask just on one site and flag your question to be moved if you later think it would be better on another.
 types: question
 users: user
 
@@ -209,7 +214,7 @@ This answer is awful
 types: flag-answer
 
 # Handled
-Thank you for bringing this to my attention.  I handled this situation.
+Thank you for bringing this to my attention. I handled this situation.
 types: helpful-flag
 
 # No Migration use standard path
@@ -222,6 +227,7 @@ types: decline-flag
 
 # No Migration bad post
 We do not migrate bad posts, as it most likely would be closed on the other site as well.
+types: decline-flag
 
 # No Migration off-topic there
 This particular post is off-topic on the other site. Please read the on-topic page for the other site before flagging.
@@ -317,6 +323,7 @@ types: decline-flag
 
 # Can't accept answer
 Moderators cannot accept/unaccept an answer on behalf of the original poster.
+types: decline-flag
 
 # Serial down votes
 Serial downvotes are reversed automatically. See this Q&A: https://meta.stackoverflow.com/questions/252270. If they aren’t reversed after 36 hours, please flag again.
