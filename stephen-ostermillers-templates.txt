@@ -61,7 +61,7 @@ Rather than adding details in comments, please [edit] your question to add reque
 types: question
 
 # Comment with updates
-Rather than adding details in comments, please [edit] your answer to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice.  Editing updates into your answer ensures that they don't get lost and that everybody who wants to use our answer sees them.
+Rather than adding details in comments, please [edit] your answer to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice.  Editing updates into your answer ensures that they don't get lost and that everybody who wants to use your answer sees them.
 types: answer
 
 # Comment as answer
