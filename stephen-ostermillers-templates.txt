@@ -60,6 +60,10 @@ types: close, question
 Rather than adding details in comments, please [edit] your question to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice.  Editing updates into your question ensures that they don't get lost and that everybody who wants to answer the question sees them.
 types: question
 
+# Comment with updates
+Rather than adding details in comments, please [edit] your answer to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice.  Editing updates into your answer ensures that they don't get lost and that everybody who wants to use our answer sees them.
+types: answer
+
 # Comment as answer
 That should be posted as an answer rather than as a comment. Comments are temporary and cannot be accepted as an answer. There is no mechanism for converting comments to answers, so I cannot do it for you. You will need to copy your comment into the answer box and then delete your comment.
 types: question
