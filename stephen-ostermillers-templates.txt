@@ -15,12 +15,12 @@ tags: seo
 types: close-question, question
 
 # More than one question asked
-I voted to close this post because it asks more than one question. It is preferred if you can post separate questions instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will find the answer. Please [edit] this post to pare it down to a single question and create separate posts for additional questions.
+I voted to close this post because it asks more than one question. Please post questions separately instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will be able to find the answer. You may [edit] this post to pare it down to a single question and create separate posts for additional questions.
 types: close, question
 users: user
 
 # More than one question asked
-I closed this post because it asks more than one question. It is preferred if you can post separate questions instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will find the answer. Please [edit] this post to pare it down to a single question and create separate posts for additional questions.
+I closed this post because it asks more than one question. Please post questions separately instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will find the answer. You may [edit] this post to pare it down to a single question and create separate posts for additional questions.
 types: close, question
 users: moderators
 
@@ -53,7 +53,7 @@ types: close, question
 users: moderator
 
 # Text screenshots
-Please [edit] this question to type the text from the image so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your iamage makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question).
+Please [edit] this question to type the text from the image so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your iamage makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question). See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
 types: close, question
 
 # Comment with updates
@@ -115,7 +115,7 @@ sites: stackoverflow
 # "Me too!" answer
 I [deleted](/help/deleted-answers) this because it is not an answer to the question. If you're interested in this specific question, you can click the “follow” link to receive notifications of new answers. Once you have enough [reputation](/help/whats-reputation), you can [upvote](/help/privileges/vote-up) it, or create a [bounty](/help/privileges/set-bounties) to attract more attention to it. If you have a different but related question then [ask](/questions/ask) it. You can reference this one if it would help provide context.
 types: answer
-users: moderators
+users: moderator
 
 # "Me too!" answer
 I flagged this for [deletion](/help/deleted-answers) because it is not an answer to the question. If you're interested in this specific question, you can click the “follow” link to receive notifications of new answers. Once you have enough [reputation](/help/whats-reputation), you can [upvote](/help/privileges/vote-up) it, or create a [bounty](/help/privileges/set-bounties) to attract more attention to it. If you have a different but related question then [ask](/questions/ask) it. You can reference this one if it would help provide context.
@@ -225,47 +225,47 @@ types: flag-answer
 Thank you for bringing this to my attention. I handled this situation.
 types: helpful-flag
 
-# No Migration use standard path
+# No migration, use standard path
 There is a standard migration path available for that site. Please use that instead of flagging for moderator attention.
 types: decline-flag
 
-# No Migration no answers
+# No migration, no answers
 The post has no answers; the poster can just delete the question here, and reask it on the other site.
 types: decline-flag
 
-# No Migration bad post
+# No migration, bad post
 We do not migrate bad posts, as it most likely would be closed on the other site as well.
 types: decline-flag
 
-# No Migration off-topic there
+# No migration, off-topic there
 This particular post is off-topic on the other site. Please read the on-topic page for the other site before flagging.
 types: decline-flag
 
-# No Migration already closed
-The question is already closed; you can delete the post here, and reask it on the other site.
+# No migration, already closed
+The question is already closed; you can delete the post here, and re-ask it on the other site.
 types: decline-flag
 
-# No Migration too old
+# No migration, too old
 The post is too old to be migrated.
 types: decline-flag
 
-# No deletion has answers
+# No deletion, has answers
 We do not delete questions once they have accrued answers, as the posted solutions may prove helpful to future visitors. Feel free to use the /contact page to request dissociation.
 types: decline-flag
 
-# Closed duplicate should ping
+# Closed duplicate, should ping
 Moderator flags must not be used to resolve wrong dupe closures. See this Q&A: https://meta.stackoverflow.com/q/291977. @ping the gold-badge user who closed the question in a comment to inform them.
 types: decline-flag
 
-# Closed duplicate should edit
+# Closed duplicate, should edit
 Moderator flags must not be used to resolve wrong dupe closures. Edit the post to clarify why it is not a duplicate; this will push it to the review queue where the post might get reopened.
 types: decline-flag
 
-# Closed duplicate should vote
+# Closed duplicate, should vote
 Moderator flags must not be used to resolve inaccuracies regarding dupe closures. Do vote to close/reopen the post as needed. Feel free to consult a gold-badge holder, if necessary.
 types: decline-flag
 
-# Closed should edit
+# Closed, should edit
 Moderator flags must not be used to resolve issues regarding question closures. Please edit the post to make it more on-topic. This will push it to the review queue where the post might get reopened.
 types: decline-flag
 
@@ -297,23 +297,23 @@ types: decline-flag
 Please wait until the suggested edit queue is empty. You can suggest edits after that.
 types: decline-flag
 
-# No deletion third party site
+# No deletion, third party site
 Moderators do not enforce third-party restrictions on content by deleting posts that are valid according to the Stack Overflow norms. Please raise a complaint on their site and follow up with it.
 types: decline-flag
 
-# No deletion third party close
+# No deletion, third party close
 Moderators do not enforce third-party restrictions on content. Please use the standard close reasons and close the question if needed.
 types: decline-flag
 
-# No delition no restriction
+# No deletion, no restriction
 Moderators do not enforce those restrictions on content. Please use the standard close reasons and close the question if needed.
 types: decline-flag
 
-# Code-only should downvote
+# Code-only, should downvote
 Code-only answers are downvote-worthy, not flag-worthy. Please note that flags should not be used to indicate technical inaccuracies, or an altogether wrong answer.
 types: decline-flag
 
-# Rhetorical should edit
+# Rhetorical, should edit
 Rhetorical questions must not be flagged; edit them and make them an answer instead. See this Q&A: http://meta.stackexchange.com/questions/131959
 types: decline-flag
 
@@ -345,7 +345,7 @@ types: decline-flag
 The bounty expires in less than a day. It is easier to just wait it out and then close, rather than to refund it now.
 types: decline-flag
 
-# No bounty refund unanswered
+# No bounty refund, unanswered
 We do not refund bounties just because you did not receive any answers; bounties are used just to advertise questions only.
 types: decline-flag
 
