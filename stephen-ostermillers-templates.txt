@@ -53,7 +53,7 @@ types: close, question
 users: moderator
 
 # Text screenshots
-Please [edit] this question to type the text from the screenshot. Then people answering the question will be able to quote the text or suggest corrections to it. Text will be able to be found through search. As it stands now, your screenshots make it hard to answer your question or for people with related issues to find your question.
+Please [edit] this question to type the text from the image so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your iamage makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question).
 types: close, question
 
 # Comment with updates
