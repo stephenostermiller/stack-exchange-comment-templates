@@ -30,12 +30,16 @@ types: close, question
 users: moderator
 
 # Text screenshots
-Please [edit] this question to type the text from the image. Pictures with text are often not legible depending on the screen size of the viewer, nor are they compatible with accessibility tools such as screen readers. Text has other advantages: portions can be quoted in answers, it is easy to make or suggest corrections to it, and it can be found through search. See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
+Please [edit] this question to type the text from the image so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your iamage makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question). See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
 types: close, question
 
 # Comment with updates
 Rather than adding details in comments, please [edit] your question to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice.  Editing updates into your question ensures that they don't get lost and that everybody who wants to answer the question sees them.
 types: question
+
+# Comment with updates
+Rather than adding details in comments, please [edit] your answer to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice.  Editing updates into your answer ensures that they don't get lost and that everybody who wants to use your answer sees them.
+types: answer
 
 # Comment as answer
 That should be posted as an answer rather than as a comment. Comments are temporary and cannot be accepted as an answer. There is no mechanism for converting comments to answers, so I cannot do it for you. You will need to copy your comment into the answer box and then delete your comment.
