@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.00
+// @version 1.01
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @include /https?\:\/\/([a-z\.]*\.)?(stackexchange|askubuntu|superuser|serverfault|stackoverflow|answers\.onstartups)\.com\/.*/
 // @exclude *://chat.stackoverflow.com/*
@@ -302,6 +302,8 @@
 	var questionid
 	function getQuestionId(){
 		if (!questionid) questionid=$('.question').attr('data-questionid')
+        var l = $('.answer-hyperlink')
+		if (!questionid && l.length) questionid=l.attr('href').replace(/^\/questions\/([0-9]+).*/,"$1")
 		if (!questionid) questionid="-"
 		return questionid
 	}
@@ -610,9 +612,6 @@
 			}
 		}
 	})
-
-	console.log(fillVariables("Question ID: $QUESTIONID, Site name: $SITENAME$, Site URL: $SITEURL, My user ID: $MYUSERID"))
-	console.log(fillVariables("OP id: $OPID, OP name: $OPNAME, OP rep: $OPREP"))
 
 	function showMenu(target){
 		commentTextField=target
