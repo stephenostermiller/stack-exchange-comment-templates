@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.01
+// @version 1.02
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @include /https?\:\/\/([a-z\.]*\.)?(stackexchange|askubuntu|superuser|serverfault|stackoverflow|answers\.onstartups)\.com\/.*/
 // @exclude *://chat.stackoverflow.com/*
@@ -302,7 +302,7 @@
 	var questionid
 	function getQuestionId(){
 		if (!questionid) questionid=$('.question').attr('data-questionid')
-        var l = $('.answer-hyperlink')
+		var l = $('.answer-hyperlink')
 		if (!questionid && l.length) questionid=l.attr('href').replace(/^\/questions\/([0-9]+).*/,"$1")
 		if (!questionid) questionid="-"
 		return questionid
@@ -561,20 +561,21 @@
 			showMenu(parent.find('textarea'))
 			e.preventDefault()
 			return false
+		} else if (target.closest('#review-action-Unsalvageable,label[for="review-action-Unsalvageable"]').length){
+			// Triage review queue - unsalvageable
+			target.trigger('click')
+			$('button.js-review-submit').trigger('click')
+			showMenuInFlagDialog()
+			e.preventDefault()
+			return false
 		} else if (target.is('.js-flag-post-link')){
 			// the "Flag" link for a question or answer
 			// Click it to show pop up
 			target.trigger('click')
-			// Wait for the popup
-			setTimeout(function(){
-				$('input[value="PostOther"]').trigger('click')
-			},100)
-			setTimeout(function(){
-				showMenu($('input[value="PostOther"]').parents('label').find('textarea'))
-			},200)
+			showMenuInFlagDialog()
 			e.preventDefault()
 			return false
-		} else if (target.parents('.js-comment-flag').length){
+		} else if (target.closest('.js-comment-flag').length){
 			// The flag icon next to a comment
 			target.trigger('click')
 			setTimeout(function(){
@@ -586,18 +587,18 @@
 			},200)
 			e.preventDefault()
 			return false
+		} else if (target.closest('#review-action-Close,label[for="review-action-Close"],#review-action-NeedsAuthorEdit,label[for="review-action-NeedsAuthorEdit"]').length){
+			// Close votes review queue - close action
+			// or Triage review queue - needs author edit action
+			target.trigger('click')
+			$('button.js-review-submit').trigger('click')
+			showMenuInCloseDialog()
+			e.preventDefault()
+			return false
 		} else if (target.is('.js-close-question-link')){
 			// The "Close" link for a question
 			target.trigger('click')
-			setTimeout(function(){
-				$('#closeReasonId-SiteSpecific').trigger('click')
-			},100)
-			setTimeout(function(){
-				$('#siteSpecificCloseReasonId-other').trigger('click')
-			},200)
-			setTimeout(function(){
-				showMenu($('#siteSpecificCloseReasonId-other').parents('.js-popup-radio-action').find('textarea'))
-			},300)
+			showMenuInCloseDialog()
 			e.preventDefault()
 			return false
 		} else if (target.is('textarea,input[type="text"]') && (!target.val() || target.val() == target[0].defaultValue)){
@@ -612,6 +613,28 @@
 			}
 		}
 	})
+
+	function showMenuInFlagDialog(){
+		// Wait for the popup
+		setTimeout(function(){
+			$('input[value="PostOther"]').trigger('click')
+		},100)
+		setTimeout(function(){
+			showMenu($('input[value="PostOther"]').parents('label').find('textarea'))
+		},200)
+	}
+
+	function showMenuInCloseDialog(){
+		setTimeout(function(){
+			$('#closeReasonId-SiteSpecific').trigger('click')
+		},100)
+		setTimeout(function(){
+			$('#siteSpecificCloseReasonId-other').trigger('click')
+		},200)
+		setTimeout(function(){
+			showMenu($('#siteSpecificCloseReasonId-other').parents('.js-popup-radio-action').find('textarea'))
+		},300)
+	}
 
 	function showMenu(target){
 		commentTextField=target
