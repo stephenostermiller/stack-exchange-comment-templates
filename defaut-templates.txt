@@ -166,3 +166,7 @@ types: decline-flag
 # Example helpful flag comment
 This flag was helpful because [type here]
 types: helpful-flag
+
+# Example edit rejection comment
+This edit [type here]
+types: reject-edit
