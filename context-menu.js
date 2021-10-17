@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.02
+// @version 1.03
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @include /https?\:\/\/([a-z\.]*\.)?(stackexchange|askubuntu|superuser|serverfault|stackoverflow|answers\.onstartups)\.com\/.*/
 // @exclude *://chat.stackoverflow.com/*
@@ -61,7 +61,7 @@
 		return userMap[s.toLowerCase().trim()]
 	}
 
-	var typeMapInput = "question,answer,edit-question,edit-answer,close-question,flag-comment,flag-question,flag-answer,decline-flag,helpful-flag"
+	var typeMapInput = "question,answer,edit-question,edit-answer,close-question,flag-comment,flag-question,flag-answer,decline-flag,helpful-flag,reject-edit"
 	var typeMap = makeFilterMap(typeMapInput)
 	typeMap.c = 'close-question'
 	typeMap.close = 'close-question'
@@ -247,6 +247,7 @@
 		// Most of these rules use properties of the node or the node's parents
 		// to deduce their context
 
+        if (node.is('.js-rejection-reason-custom')) return "reject-edit"
 		if (node.parents('.js-comment-flag-option').length) return "flag-comment"
 		if (node.parents('.js-flagged-post').length){
 			if (/decline/.exec(node.attr('placeholder'))) return "decline-flag"
@@ -299,37 +300,33 @@
 	}
 
 	// The id of the question currently being viewed
-	var questionid
 	function getQuestionId(){
-		if (!questionid) questionid=$('.question').attr('data-questionid')
+		if (!varCache.questionid) varCache.questionid=$('.question').attr('data-questionid')
 		var l = $('.answer-hyperlink')
-		if (!questionid && l.length) questionid=l.attr('href').replace(/^\/questions\/([0-9]+).*/,"$1")
-		if (!questionid) questionid="-"
-		return questionid
+		if (!varCache.questionid && l.length) varCache.questionid=l.attr('href').replace(/^\/questions\/([0-9]+).*/,"$1")
+		if (!varCache.questionid) varCache.questionid="-"
+		return varCache.questionid
 	}
 
 	// The human readable name of the current Stack Exchange site
-	var sitename
 	function getSiteName(){
-		if (!sitename){
-			sitename = seOpts.site.name || ""
-			sitename = sitename.replace(/ ?Stack Exchange/, "")
+		if (!varCache.sitename){
+			varCache.sitename = seOpts.site.name || ""
+			varCache.sitename = varCache.sitename.replace(/ ?Stack Exchange/, "")
 		}
-		return sitename
+		return varCache.sitename
 	}
 
 	// The Stack Exchange user id for the person using this tool
-	var myUserId
 	function getMyUserId() {
-		if (!myUserId) myUserId = seOpts.user.userId || ""
-		return myUserId
+		if (!varCache.myUserId) varCache.myUserId = seOpts.user.userId || ""
+		return varCache.myUserId
 	}
 
 	// The full host name of the Stack Exchange site
-	var siteurl
 	function getSiteUrl(){
-		if (!siteurl) siteurl = location.hostname
-		return siteurl
+		if (!varCache.siteurl) varCache.siteurl = location.hostname
+		return varCache.siteurl
 	}
 
 	// Store the comment text field that was clicked on
@@ -412,10 +409,9 @@
 		return postNode.find('.post-signature .user-details[itemprop="author"]')
 	}
 
-	var opNode
 	function getOpNode(){
-		if (!opNode) opNode = getAuthorNode($('#question,.question'))
-		return opNode
+		if (!varCache.opNode) varCache.opNode = getAuthorNode($('#question,.question'))
+		return varCache.opNode
 	}
 
 	function getUserNodeId(node){
@@ -427,10 +423,9 @@
 		return href.replace(/[^0-9]+/g, "")
 	}
 
-	var opId
 	function getOpId(){
-		if (!opId) opId = getUserNodeId(getOpNode())
-		return opId
+		if (!varCache.opId) varCache.opId = getUserNodeId(getOpNode())
+		return varCache.opId
 	}
 
 	function getUserNodeName(node){
@@ -441,10 +436,9 @@
 		return link.text().replace(/ /,"")
 	}
 
-	var opName
 	function getOpName(){
-		if (!opName) opName = getUserNodeName(getOpNode())
-		return opName
+		if (!varCache.opName) varCache.opName = getUserNodeName(getOpNode())
+		return varCache.opName
 	}
 
 	function getUserNodeRep(node){
@@ -454,30 +448,34 @@
 		return r.text()
 	}
 
-	var opRep
 	function getOpRep(){
-		if (!opRep) opRep = getUserNodeRep(getOpNode())
-		return opRep
+		if (!varCache.opRep) varCache.opRep = getUserNodeRep(getOpNode())
+		return varCache.opRep
 	}
 
 	function getPostNode(){
-		return commentTextField.parents('#question,.question,.answer')
+        if (!varCache.postNode) varCache.postNode = commentTextField.parents('#question,.question,.answer')
+        return varCache.postNode
 	}
 
 	function getPostAuthorNode(){
-		return getAuthorNode(getPostNode())
+        if (!varCache.postAuthorNode) varCache.postAuthorNode = getAuthorNode(getPostNode())
+        return varCache.postAuthorNode
 	}
 
 	function getAuthorId(){
-		return getUserNodeId(getPostAuthorNode())
+        if (!varCache.authorId) varCache.authorId = getUserNodeId(getPostAuthorNode())
+        return varCache.authorId
 	}
 
 	function getAuthorName(){
-		return getUserNodeName(getPostAuthorNode())
+        if (!varCache.authorName) varCache.authorName = getUserNodeName(getPostAuthorNode())
+        return varCache.authorName
 	}
 
 	function getAuthorRep(){
-		return getUserNodeRep(getPostAuthorNode())
+        if (!varCache.authorRep) varCache.authorRep = getUserNodeRep(getPostAuthorNode())
+        return varCache.authorRep
 	}
 
 	function getPostId(){
@@ -502,6 +500,13 @@
 		'AUTHORNAME': getAuthorName,
 		'AUTHORREP': getAuthorRep
 	}
+
+    function logVars(){
+        var varnames = Object.keys(varMap)
+        for (var i=0; i<varnames.length; i++){
+            console.log(varnames[i] + ": " + varMap[varnames[i]]())
+        }
+    }
 
 	// Build regex to find variables from keys of map
 	var varRegex = new RegExp('\\$('+Object.keys(varMap).join('|')+')\\$?', 'g')
@@ -559,6 +564,19 @@
 			target.trigger('click')
 			// Bring up the context menu for it
 			showMenu(parent.find('textarea'))
+			e.preventDefault()
+			return false
+		} else if (target.closest('#review-action-Reject,label[for="review-action-Reject"]').length){
+			// Suggested edit review queue - reject
+			target.trigger('click')
+			$('button.js-review-submit').trigger('click')
+			setTimeout(function(){
+				// Click "causes harm"
+				$('#rejection-reason-0').trigger('click')
+			},100)
+			setTimeout(function(){
+				showMenu($('#rejection-reason-0').parents('.flex--item').find('textarea'))
+			},200)
 			e.preventDefault()
 			return false
 		} else if (target.closest('#review-action-Unsalvageable,label[for="review-action-Unsalvageable"]').length){
@@ -636,14 +654,16 @@
 		},300)
 	}
 
+    var varCache={} // Cache variables so they don't have to be looked up for every single question
 	function showMenu(target){
+        varCache={} // Clear the variable cache
 		commentTextField=target
-		console.log(fillVariables("Post id: $POSTID, Author id: $AUTHORID, Author name: $AUTHORNAME, Author rep: $AUTHORREP"))
 		var type = getType(target)
 		var user = getUserClass()
 		var site = getSite()
 		var tags = getTags()
 		ctcmi.html("")
+        //logVars()
 		for (var i=0; i<comments.length; i++){
 			if(commentMatches(comments[i], type, user, site, tags)){
 				ctcmi.append(
