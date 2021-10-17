@@ -60,6 +60,10 @@ types: close-question, question
 Please [edit] this question to type the text from the image so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your image makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question). See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
 types: close-question, question
 
+# Text screenshots
+Please [edit] this answer to type the text from the image so that it can be read on all devices, edited, copied as text, and found through search. As it stands now, your image makes it hard to view and use your answer. See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
+types: answer
+
 # Comment with updates
 Rather than adding details in comments, please [edit] your question to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice.  Editing updates into your question ensures that they don't get lost and that everybody who wants to answer the question sees them.
 types: question
