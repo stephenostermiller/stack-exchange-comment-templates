@@ -3,12 +3,12 @@ Question ID: $QUESTIONID, Site name: $SITENAME$, Site URL: $SITEURL, My user ID:
 
 # More than one question asked
 I voted to close this post because it asks more than one question. Please post questions separately instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will be able to find the answer. You may [edit] this post to pare it down to a single question and create separate posts for additional questions.
-types: close, question
+types: close-question, question
 users: user
 
 # More than one question asked
 I closed this post because it asks more than one question. Please post questions separately instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will find the answer. You may [edit] this post to pare it down to a single question and create separate posts for additional questions.
-types: close, question
+types: close-question, question
 users: moderators
 
 # Closed then asked again
@@ -21,21 +21,25 @@ types: question
 
 # Resolved without answers
 I voted to close this question because you indicate that you resolved the problem without receiving any answers.
-types: close, question
+types: close-question, question
 users: user
 
 # Resolved without answers
 I closed this question because you indicate that you resolved the problem without receiving any answers.
-types: close, question
+types: close-question, question
 users: moderator
 
 # What isn't working?
 Please [edit] your question to say more about what isn't working.  Do you see an error message?  If so, what is it?  It is not producing the expected output?  If not, what output do you see and what output do you expect?
-types: close, question
+types: close-question, question
 
 # Text screenshots
 Please [edit] this question to type the text from the image so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your image makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question). See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
-types: close, question
+types: close-question, question
+
+# Text screenshots
+Please [edit] this answer to type the text from the image so that it can be read on all devices, edited, copied as text, and found through search. As it stands now, your image makes it hard to view and use your answer. See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
+types: answer
 
 # Comment with updates
 Rather than adding details in comments, please [edit] your question to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice.  Editing updates into your question ensures that they don't get lost and that everybody who wants to answer the question sees them.
