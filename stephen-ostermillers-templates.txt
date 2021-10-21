@@ -11,25 +11,25 @@ types: close-question, question
 # SEO off-topic unanswered
 I voted to close this question because general SEO questions are off-topic. Only programming-related SEO questions are acceptable on Stack Overflow. Non-programming SEO questions should be asked on [webmasters.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
-tags: seo
+tags: google-search, seo
 types: close-question, question
 
 # SEO off-topic resource request
 I voted to close this question because it asks for recommendations of external websites, tools, resources, or software.  General SEO questions are also off-topic. Only programming-related SEO questions are acceptable on Stack Overflow. Non-programming SEO questions should be asked on [webmasters.se].   If you can remove the request for recommendations, please delete your question here and re-ask it there.
 sites: stackoverflow
-tags: seo
+tags: google-search, seo
 types: close-question, question
 
 # SEO off-topic with answers
 I flagged this question to be moved because general SEO questions are off-topic. Only programming-related SEO questions are acceptable on Stack Overflow. Non-programming SEO questions should be asked on [webmasters.se]. Because this question already has an answer, please wait for it be moved rather than re-asking it there.
 sites: stackoverflow
-tags: seo
+tags: google-search, seo
 types: question
 
 # SEO off-topic with answers
 Please move this question and its answers to webmasters. I'm a moderator on webmasters. This question would be on-topic there.
 sites: stackoverflow
-tags: seo
+tags: google-search, seo
 types: flag-question
 
 # More than one question asked
