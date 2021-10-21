@@ -20,7 +20,7 @@ Please [edit] your question to provide the requested details so that this can be
 types: question
 
 # Resolved without answers
-I voted to close this question because you indicate that you resolved the problem without receiving any answers.
+I voted to close this question because you indicate that you resolved the problem without receiving any answers.  If you still need answers, please [edit] the question to indicate that the issue is not fully resolved.  If the solution you found would be useful to others, please answer your own question by pressing the "Answer Your Question" button.
 types: close-question, question
 users: user
 
