@@ -8,6 +8,12 @@ I voted to close this question because there is no example code. Please [edit] y
 sites: stackoverflow
 types: close-question, question
 
+# Programmatic Google searches
+It is against Google's [Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines) and [terms of service](https://policies.google.com/terms/archive/20020906?hl=en) to submit programmatic search queries.  Running this code against Google is likely to cause Google to show captcha for searches from your IP address.
+sites: stackoverflow
+tags: google-search
+types: question
+
 # SEO off-topic unanswered
 I voted to close this question because general SEO questions are off-topic. Only programming-related SEO questions are acceptable on Stack Overflow. Non-programming SEO questions should be asked on [webmasters.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
