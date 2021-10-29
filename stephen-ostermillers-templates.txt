@@ -14,6 +14,12 @@ sites: stackoverflow
 tags: google-search
 types: question
 
+# WordPress off-topic unanswered
+I voted to close this question because it is not a programming question.  Questions about WordPress development and administration should be asked on [wordpress.se].  Please delete your question here and re-ask it there.
+sites: stackoverflow
+tags: wordpress
+types: close-question, question
+
 # SEO off-topic unanswered
 I voted to close this question because general SEO questions are off-topic. Only programming-related SEO questions are acceptable on Stack Overflow. Non-programming SEO questions should be asked on [webmasters.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
