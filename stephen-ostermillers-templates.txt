@@ -14,6 +14,11 @@ sites: stackoverflow
 tags: google-search
 types: question
 
+# Non-programming, off-topic
+I voted to close this question because it is not a programming question.  Rather, it is about [type here].
+sites: stackoverflow
+types: close-question
+
 # Website off-topic, re-ask
 I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow.   Non-programming questions about your website should be asked on [webmasters.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
