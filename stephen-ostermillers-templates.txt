@@ -14,35 +14,37 @@ sites: stackoverflow
 tags: google-search
 types: question
 
-# WordPress off-topic unanswered
-I voted to close this question because it is not a programming question.  Questions about WordPress development and administration should be asked on [wordpress.se].  Please delete your question here and re-ask it there.
+# Website off-topic, re-ask
+I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow.   Non-programming questions about your website should be asked on [webmasters.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
-tags: wordpress
 types: close-question, question
 
-# SEO off-topic unanswered
-I voted to close this question because general SEO questions are off-topic. Only programming-related SEO questions are acceptable on Stack Overflow. Non-programming SEO questions should be asked on [webmasters.se]. Please delete your question here and re-ask it there.
+# Website off-topic, needs clarity
+This is not a programming question and it is off-topic on Stack Overflow.  Please [edit] the question to address the points that need to be clarified, then re-ask it on [webmasters.se] and delete it here.
 sites: stackoverflow
-tags: google-search, seo
+types: question
+
+# Website off-topic, resource request
+I voted to close this question because it asks for recommendations of external websites, tools, resources, or software.  It is also not a programming question so it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. If you can remove the request for recommendations, please delete your question here and re-ask it there.
+sites: stackoverflow
 types: close-question, question
 
-# SEO off-topic resource request
-I voted to close this question because it asks for recommendations of external websites, tools, resources, or software.  General SEO questions are also off-topic. Only programming-related SEO questions are acceptable on Stack Overflow. Non-programming SEO questions should be asked on [webmasters.se].   If you can remove the request for recommendations, please delete your question here and re-ask it there.
-sites: stackoverflow
-tags: google-search, seo
-types: close-question, question
-
-# SEO off-topic with answers
-I flagged this question to be moved because general SEO questions are off-topic. Only programming-related SEO questions are acceptable on Stack Overflow. Non-programming SEO questions should be asked on [webmasters.se]. Because this question already has an answer, please wait for it be moved rather than re-asking it there.
+# Website off-topic, with answers
+I flagged this question to be moved to [webmasters.se] because it is not a programming question that is on-topic here. Because this question already has an answer, please wait for it be moved rather than re-asking it there.
 sites: stackoverflow
 tags: google-search, seo
 types: question
 
-# SEO off-topic with answers
+# Website off-topic with answers
 Please move this question and its answers to webmasters. I'm a moderator on webmasters. This question would be on-topic there.
 sites: stackoverflow
-tags: google-search, seo
 types: flag-question
+
+# WordPress off-topic, re-ask
+I voted to close this question because it is not a programming question.  Questions about WordPress development and administration should be asked on [wordpress.se].  Please delete your question here and re-ask it there.
+sites: stackoverflow
+tags: wordpress
+types: close-question, question
 
 # More than one question asked
 I voted to close this post because it asks more than one question. Please post questions separately instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will be able to find the answer. You may [edit] this post to pare it down to a single question and create separate posts for additional questions.
