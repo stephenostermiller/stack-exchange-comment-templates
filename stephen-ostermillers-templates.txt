@@ -90,7 +90,7 @@ types: close-question, question
 users: user
 
 # Resolved without answers
-I closed this question because you indicate that you resolved the problem without receiving any answers.
+I closed this question because you indicate that you resolved the problem without receiving any answers. If you still need answers, please [edit] the question to indicate that the issue is not fully resolved.  If the solution you found would be useful to others, please flag the question for moderator attention and say you want to self-answer so that we can re-open it for you to do so.
 types: close-question, question
 users: moderator
 
