@@ -20,7 +20,7 @@ Please [edit] your question to provide the requested details so that this can be
 types: question
 
 # Resolved without answers
-I voted to close this question because you indicate that you resolved the problem without receiving any answers.  If you still need answers, please [edit] the question to indicate that the issue is not fully resolved.  If the solution you found would be useful to others, please answer your own question by pressing the "Answer Your Question" button.
+I voted to close this question because you indicate that you resolved the problem without receiving any answers. If you still need answers, please [edit] the question to indicate that the issue is not fully resolved. If the solution you found would be useful to others, please answer your own question by pressing the "Answer Your Question" button.
 types: close-question, question
 users: user
 
@@ -30,7 +30,7 @@ types: close-question, question
 users: moderator
 
 # What isn't working?
-Please [edit] your question to say more about what isn't working.  Do you see an error message?  If so, what is it?  It is not producing the expected output?  If not, what output do you see and what output do you expect?
+Please [edit] your question to say more about what isn't working. Do you see an error message? If so, what is it? It is not producing the expected output? If not, what output do you see and what output do you expect?
 types: close-question, question
 
 # Text screenshots
@@ -42,11 +42,11 @@ Please [edit] this answer to type the text from the image so that it can be read
 types: answer
 
 # Comment with updates
-Rather than adding details in comments, please [edit] your question to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice.  Editing updates into your question ensures that they don't get lost and that everybody who wants to answer the question sees them.
+Rather than adding details in comments, please [edit] your question to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice. Editing updates into your question ensures that they don't get lost and that everybody who wants to answer the question sees them.
 types: question
 
 # Comment with updates
-Rather than adding details in comments, please [edit] your answer to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice.  Editing updates into your answer ensures that they don't get lost and that everybody who wants to use your answer sees them.
+Rather than adding details in comments, please [edit] your answer to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice. Editing updates into your answer ensures that they don't get lost and that everybody who wants to use your answer sees them.
 types: answer
 
 # Comment as answer
@@ -54,8 +54,14 @@ That should be posted as an answer rather than as a comment. Comments are tempor
 types: question
 
 # Question as answer
-I deleted this because it does not answer the question. You can [search for similar questions](/search), or refer to the related and linked questions on this page to find an answer. If you have your own question which is different from the one asked here, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
+I [deleted](/help/deleted-answers) this because it does not answer the question. You can [search for similar questions](/search), or refer to the related and linked questions on this page to find an answer. If you have your own question which is different from the one asked here, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
 types: answer
+users: moderator
+
+# Question as answer
+I flagged this for [deletion](/help/deleted-answers) because it does not answer the question. You can [search for similar questions](/search), or refer to the related and linked questions on this page to find an answer. If you have your own question which is different from the one asked here, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
+types: answer
+users: user
 
 # Thank you answer
 I [deleted](/help/deleted-answers) this because it is only a “thank you” and not an answer. Once you [earn](//meta.stackoverflow.com/q/146472) enough [reputation](/help/whats-reputation), you will gain privileges to [upvote answers](/help/privileges/vote-up). Then visitors see a higher vote count on that answer, and the author will be rewarded with reputation points. See [Why is voting important](/help/why-vote).
