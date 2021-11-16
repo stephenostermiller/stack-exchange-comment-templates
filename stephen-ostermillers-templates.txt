@@ -9,7 +9,7 @@ sites: stackoverflow
 types: close-question, question
 
 # Programmatic Google searches
-It is against Google's [Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines) and [terms of service](https://policies.google.com/terms/archive/20020906?hl=en) to submit programmatic search queries.  Running this code against Google is likely to cause Google to show captcha for searches from your IP address.
+It is against Google's [Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines) and [terms of service](https://policies.google.com/terms/archive/20020906?hl=en) to submit programmatic search queries. Running this code against Google is likely to cause Google to show captcha for searches from your IP address.
 sites: stackoverflow
 tags: google-search
 types: question
@@ -20,22 +20,22 @@ sites: stackoverflow
 types: close-question, question
 
 # Non-programming, off-topic
-I voted to close this question because it is not a programming question.  Rather, it is about [type here].
+I voted to close this question because it is not a programming question. Rather, it is about [type here].
 sites: stackoverflow
 types: close-question
 
 # Website off-topic, re-ask
-I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow.   Non-programming questions about your website should be asked on [webmasters.se]. Please delete your question here and re-ask it there.
+I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
 types: close-question, question
 
 # Website off-topic, needs clarity
-This is not a programming question and it is off-topic on Stack Overflow.  Please [edit] the question to address the points that need to be clarified, then re-ask it on [webmasters.se] and delete it here.
+This is not a programming question and it is off-topic on Stack Overflow. Please [edit] the question to address the points that need to be clarified, then re-ask it on [webmasters.se] and delete it here.
 sites: stackoverflow
 types: question
 
 # Website off-topic, resource request
-I voted to close this question because it asks for recommendations of external websites, tools, resources, or software.  It is also not a programming question so it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. If you can remove the request for recommendations, please delete your question here and re-ask it there.
+I voted to close this question because it asks for recommendations of external websites, tools, resources, or software. It is also not a programming question so it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. If you can remove the request for recommendations, please delete your question here and re-ask it there.
 sites: stackoverflow
 types: close-question, question
 
@@ -51,7 +51,7 @@ sites: stackoverflow
 types: flag-question
 
 # WordPress off-topic, re-ask
-I voted to close this question because it is not a programming question.  Questions about WordPress development and administration should be asked on [wordpress.se].  Please delete your question here and re-ask it there.
+I voted to close this question because it is not a programming question. Questions about WordPress development and administration should be asked on [wordpress.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
 tags: wordpress
 types: close-question, question
@@ -85,17 +85,17 @@ types: close-question, question
 sites: webmasters
 
 # Resolved without answers
-I voted to close this question because you indicate that you resolved the problem without receiving any answers.  If you still need answers, please [edit] the question to indicate that the issue is not fully resolved.  If the solution you found would be useful to others, please answer your own question by pressing the "Answer Your Question" button.
+I voted to close this question because you indicate that you resolved the problem without receiving any answers. If you still need answers, please [edit] the question to indicate that the issue is not fully resolved. If the solution you found would be useful to others, please answer your own question by pressing the "Answer Your Question" button.
 types: close-question, question
 users: user
 
 # Resolved without answers
-I closed this question because you indicate that you resolved the problem without receiving any answers. If you still need answers, please [edit] the question to indicate that the issue is not fully resolved.  If the solution you found would be useful to others, please flag the question for moderator attention and say you want to self-answer so that we can re-open it for you to do so.
+I closed this question because you indicate that you resolved the problem without receiving any answers. If you still need answers, please [edit] the question to indicate that the issue is not fully resolved. If the solution you found would be useful to others, please flag the question for moderator attention and say you want to self-answer so that we can re-open it for you to do so.
 types: close-question, question
 users: moderator
 
 # What isn't working?
-Please [edit] your question to say more about what isn't working.  Do you see an error message?  If so, what is it?  It is not producing the expected output?  If not, what output do you see and what output do you expect?
+Please [edit] your question to say more about what isn't working. Do you see an error message? If so, what is it? It is not producing the expected output? If not, what output do you see and what output do you expect?
 types: close-question, question
 
 # Text screenshots
@@ -107,11 +107,11 @@ Please [edit] this answer to type the text from the image so that it can be read
 types: answer
 
 # Comment with updates
-Rather than adding details in comments, please [edit] your question to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice.  Editing updates into your question ensures that they don't get lost and that everybody who wants to answer the question sees them.
+Rather than adding details in comments, please [edit] your question to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice. Editing updates into your question ensures that they don't get lost and that everybody who wants to answer the question sees them.
 types: question
 
 # Comment with updates
-Rather than adding details in comments, please [edit] your answer to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice.  Editing updates into your answer ensures that they don't get lost and that everybody who wants to use your answer sees them.
+Rather than adding details in comments, please [edit] your answer to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice. Editing updates into your answer ensures that they don't get lost and that everybody who wants to use your answer sees them.
 types: answer
 
 # Comment as answer
@@ -134,8 +134,14 @@ types: question
 sites: webmasters
 
 # Question as answer
-I deleted this because it does not answer the question. You can [search for similar questions](/search), or refer to the related and linked questions on this page to find an answer. If you have your own question which is different from the one asked here, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
+I [deleted](/help/deleted-answers) this because it does not answer the question. You can [search for similar questions](/search), or refer to the related and linked questions on this page to find an answer. If you have your own question which is different from the one asked here, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
 types: answer
+users: moderator
+
+# Question as answer
+I flagged this for [deletion](/help/deleted-answers) because it does not answer the question. You can [search for similar questions](/search), or refer to the related and linked questions on this page to find an answer. If you have your own question which is different from the one asked here, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
+types: answer
+users: user
 
 # Thank you answer
 I [deleted](/help/deleted-answers) this because it is only a “thank you” and not an answer. Once you [earn](//meta.stackoverflow.com/q/146472) enough [reputation](/help/whats-reputation), you will gain privileges to [upvote answers](/help/privileges/vote-up). Then visitors see a higher vote count on that answer, and the author will be rewarded with reputation points. See [Why is voting important](/help/why-vote).
