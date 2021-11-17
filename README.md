@@ -55,7 +55,7 @@ There are several features of SE-AutoReviewComments that are not implemented her
  - Displaying extended information about the author
  - "See-through" mode
  - Filtering comments by keyword
- - JSONP import and export
+ - JSONP export
  - Showing the full comment text by default
  - Adding a welcome message to comments for new users
- - No direct extentions for Firefox for Chrome
+ - No direct extensions for Firefox for Chrome
