@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.03
+// @version 1.04
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @include /https?\:\/\/([a-z\.]*\.)?(stackexchange|askubuntu|superuser|serverfault|stackoverflow|answers\.onstartups)\.com\/.*/
 // @exclude *://chat.stackoverflow.com/*
@@ -9,7 +9,6 @@
 // @exclude *://chat.*.stackexchange.com/*
 // @exclude *://api.*.stackexchange.com/*
 // @exclude *://data.stackexchange.com/*
-// @connect ostermiller.org
 // @connect raw.githubusercontent.com
 // @connect *
 // @grant GM_addStyle
@@ -66,24 +65,42 @@
 	typeMap.c = 'close-question'
 	typeMap.close = 'close-question'
 
-	function loadComments(url){
+	function loadComments(urls){
+		loadCommentsRecursive([], urls.split(/[\r\n ]+/))
+	}
+
+	function loadCommentsRecursive(aComments, aUrls){
+		if (!aUrls.length) {
+			if (aComments.length){
+				comments = aComments
+				storeComments()
+				if(GM_getValue(storageKeys.url)){
+					GM_setValue(storageKeys.lastUpdate, Date.now())
+				}
+			}
+			return
+		}
+		var url = aUrls.pop()
+		if (!url){
+			loadCommentsRecursive(aComments, aUrls)
+			return
+		}
 		console.log("Loading comments from " + url)
 		GM_xmlhttpRequest({
 			method: "GET",
 			url: url,
 			onload: function(r){
-				comments = parseComments(r.responseText)
-				if (!comments || !comments.length){
+				var lComments = parseComments(r.responseText)
+				if (!lComments || !lComments.length){
 					alert("No comment templates loaded from " + url)
-					return
+				} else {
+					aComments = aComments.concat(lComments)
 				}
-				storeComments()
-				if(GM_getValue(storageKeys.url)){
-					GM_setValue(storageKeys.lastUpdate, Date.now())
-				}
+				loadCommentsRecursive(aComments, aUrls)
 			},
 			onerror: function(){
 				alert("Could not load comment templates from " + url)
+				loadCommentsRecursive(aComments, aUrls)
 			}
 		})
 	}
@@ -157,8 +174,29 @@
 		else GM_setValue(storageKeys.comments, exportComments())
 	}
 
+	function parseJsonpComments(s){
+		var cs = []
+		var callback = function(o){
+			for (var i=0; i<o.length; i++){
+				var c = {
+					title: o[i].name,
+					comment: o[i].description
+				}
+				var m = /^(?:\[([A-Z,]+)\])\s*(.*)$/.exec(c.title);
+				if (m){
+					c.title=m[2]
+					c.types=validateAllTagValues("types",m[1].split(/,/))
+				}
+				if (c && c.title && c.comment) cs.push(c)
+			}
+		}
+		eval(s)
+		return cs
+	}
+
 	function parseComments(s){
 		if (!s) return []
+		if (s.startsWith("callback(")) return parseJsonpComments(s)
 		var lines = s.split(/\n|\r|\r\n/)
 		var c, m, cs = []
 		for (var i=0; i<lines.length; i++){
@@ -247,7 +285,7 @@
 		// Most of these rules use properties of the node or the node's parents
 		// to deduce their context
 
-        if (node.is('.js-rejection-reason-custom')) return "reject-edit"
+		if (node.is('.js-rejection-reason-custom')) return "reject-edit"
 		if (node.parents('.js-comment-flag-option').length) return "flag-comment"
 		if (node.parents('.js-flagged-post').length){
 			if (/decline/.exec(node.attr('placeholder'))) return "decline-flag"
@@ -454,28 +492,28 @@
 	}
 
 	function getPostNode(){
-        if (!varCache.postNode) varCache.postNode = commentTextField.parents('#question,.question,.answer')
-        return varCache.postNode
+		if (!varCache.postNode) varCache.postNode = commentTextField.parents('#question,.question,.answer')
+		return varCache.postNode
 	}
 
 	function getPostAuthorNode(){
-        if (!varCache.postAuthorNode) varCache.postAuthorNode = getAuthorNode(getPostNode())
-        return varCache.postAuthorNode
+		if (!varCache.postAuthorNode) varCache.postAuthorNode = getAuthorNode(getPostNode())
+		return varCache.postAuthorNode
 	}
 
 	function getAuthorId(){
-        if (!varCache.authorId) varCache.authorId = getUserNodeId(getPostAuthorNode())
-        return varCache.authorId
+		if (!varCache.authorId) varCache.authorId = getUserNodeId(getPostAuthorNode())
+		return varCache.authorId
 	}
 
 	function getAuthorName(){
-        if (!varCache.authorName) varCache.authorName = getUserNodeName(getPostAuthorNode())
-        return varCache.authorName
+		if (!varCache.authorName) varCache.authorName = getUserNodeName(getPostAuthorNode())
+		return varCache.authorName
 	}
 
 	function getAuthorRep(){
-        if (!varCache.authorRep) varCache.authorRep = getUserNodeRep(getPostAuthorNode())
-        return varCache.authorRep
+		if (!varCache.authorRep) varCache.authorRep = getUserNodeRep(getPostAuthorNode())
+		return varCache.authorRep
 	}
 
 	function getPostId(){
@@ -501,12 +539,12 @@
 		'AUTHORREP': getAuthorRep
 	}
 
-    function logVars(){
-        var varnames = Object.keys(varMap)
-        for (var i=0; i<varnames.length; i++){
-            console.log(varnames[i] + ": " + varMap[varnames[i]]())
-        }
-    }
+	function logVars(){
+		var varnames = Object.keys(varMap)
+		for (var i=0; i<varnames.length; i++){
+			console.log(varnames[i] + ": " + varMap[varnames[i]]())
+		}
+	}
 
 	// Build regex to find variables from keys of map
 	var varRegex = new RegExp('\\$('+Object.keys(varMap).join('|')+')\\$?', 'g')
@@ -522,11 +560,11 @@
 	function urlConf(){
 		var url = GM_getValue(storageKeys.url)
 		ctcmi.html(
-			"<p>Comments will be loaded from this URL when saved and once a day afterwards. Github raw URLs have been whitelisted. Other URLs will ask for your permission.</p>"
+			"<p>Comments will be loaded from these URLs when saved and once a day afterwards. Multiple URLs can be specified, each on its own line.  Github raw URLs have been whitelisted. Other URLs will ask for your permission.</p>"
 		)
-		if (url) ctcmi.append("<p>Remove the URL to be able to edit the comments in your browser.</p>")
+		if (url) ctcmi.append("<p>Remove all the URLs to be able to edit the comments in your browser.</p>")
 		else ctcmi.append("<p>Using a URL will <b>overwrite</b> any edits to the comments you have made.</p>")
-		ctcmi.append($('<input type=text placeholder=https://raw.githubusercontent.com/user/repo/123/stack-exchange-comments.txt>').val(url))
+		ctcmi.append($('<textarea placeholder=https://raw.githubusercontent.com/user/repo/123/stack-exchange-comments.txt>').val(url))
 		ctcmi.append($('<button>Save</Button>').click(doneUrlConf))
 		ctcmi.append($('<button>Cancel</Button>').click(closeMenu))
 		return false
@@ -534,7 +572,7 @@
 
 	// User clicked "Save" in URL configuration dialog
 	function doneUrlConf(){
-		GM_setValue(storageKeys.url, ($(this).prev('input').val()))
+		GM_setValue(storageKeys.url, $(this).prev('textarea').val())
 		// Force a load by removing the timestamp of the last load
 		GM_deleteValue(storageKeys.lastUpdate)
 		loadStorageUrlComments()
@@ -654,16 +692,16 @@
 		},300)
 	}
 
-    var varCache={} // Cache variables so they don't have to be looked up for every single question
+	var varCache={} // Cache variables so they don't have to be looked up for every single question
 	function showMenu(target){
-        varCache={} // Clear the variable cache
+		varCache={} // Clear the variable cache
 		commentTextField=target
 		var type = getType(target)
 		var user = getUserClass()
 		var site = getSite()
 		var tags = getTags()
 		ctcmi.html("")
-        //logVars()
+		//logVars()
 		for (var i=0; i<comments.length; i++){
 			if(commentMatches(comments[i], type, user, site, tags)){
 				ctcmi.append(
