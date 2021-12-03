@@ -54,12 +54,12 @@ That should be posted as an answer rather than as a comment. Comments are tempor
 types: question
 
 # Should be question
-I [deleted](/help/deleted-answers) this because it does not answer the question. You can [search for similar questions](/search), or refer to the related and linked questions on this page to find an answer. If you have your own question which is different from the one asked here, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
+I [deleted](/help/deleted-answers) this because it asks a question rather than provides an answer. To get an answer to your question, start by [searching for similar questions](/search) or refering to the related questions linked on this page. If your question hasn't aleady been asked, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
 types: answer
 users: moderator
 
 # Should be question
-I flagged this for [deletion](/help/deleted-answers) because it does not answer the question. You can [search for similar questions](/search), or refer to the related and linked questions on this page to find an answer. If you have your own question which is different from the one asked here, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
+I flagged this for [deletion](/help/deleted-answers) because it asks a question rather than provides an answer. To get an answer to your question, start by [searching for similar questions](/search) or refering to the related questions linked on this page. If your question hasn't aleady been asked, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
 types: answer
 users: user
 
