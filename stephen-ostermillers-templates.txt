@@ -134,12 +134,12 @@ types: question
 sites: webmasters
 
 # Should be question
-I [deleted](/help/deleted-answers) this because it asks a question rather than provides an answer. To get an answer to your question, start by [searching for similar questions](/search) or refering to the related questions linked on this page. If your question hasn't aleady been asked, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
+I [deleted](/help/deleted-answers) this because it asks a question rather than provides an answer. To get an answer to your question, start by [searching for similar questions](/search) or referring to the related questions linked on this page. If your question hasn't already been asked, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
 types: answer
 users: moderator
 
 # Should be question
-I flagged this for [deletion](/help/deleted-answers) because it asks a question rather than provides an answer. To get an answer to your question, start by [searching for similar questions](/search) or refering to the related questions linked on this page. If your question hasn't aleady been asked, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
+I flagged this for [deletion](/help/deleted-answers) because it asks a question rather than provides an answer. To get an answer to your question, start by [searching for similar questions](/search) or referring to the related questions linked on this page. If your question hasn't already been asked, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
 types: answer
 users: user
 
@@ -154,12 +154,12 @@ types: answer
 users: user
 
 # Link-only
-I [deleted](/help/deleted-answers) this because it consists almost entirely of a link. A link to a solution is welcome, but please ensure your answer is useful without it: [add context around the link](//meta.stackexchange.com/a/8259) so your fellow users will have some idea what it is and why it’s there, then quote the most relevant part of the page you're linking to in case the target page is unavailable. If you [edit] this answer to add more, please flag it for moderator attention so that we can un-delete it.
+I [deleted](/help/deleted-answers) this because it consists almost entirely of a link. A link to a solution is welcome, but please ensure your answer is useful without it: [add context around the link](//meta.stackexchange.com/a/8259) so others will have some idea what it is and why it’s there, then quote the most relevant part of the page you're linking to in case the target page is unavailable. If you [edit] this answer to add more once it is deleted, please flag it for moderator attention so that it can be un-deleted.
 types: answer
 users: moderator
 
 # Link-only
-I flagged this for [deletion](/help/deleted-answers) this because it consists almost entirely of a link. A link to a solution is welcome, but please ensure your answer is useful without it: [add context around the link](//meta.stackexchange.com/a/8259) so your fellow users will have some idea what it is and why it’s there, then quote the most relevant part of the page you're linking to in case the target page is unavailable. If you [edit] this answer to add more once it is deleted, please flag it for moderator attention so that it can be un-deleted.
+I flagged this for [deletion](/help/deleted-answers) because it consists almost entirely of a link. A link to a solution is welcome, but please ensure your answer is useful without it: [add context around the link](//meta.stackexchange.com/a/8259) so others will have some idea what it is and why it’s there, then quote the most relevant part of the page you're linking to in case the target page is unavailable. If you [edit] this answer to add more once it is deleted, please flag it for moderator attention so that it can be un-deleted.
 types: answer
 users: user
 
