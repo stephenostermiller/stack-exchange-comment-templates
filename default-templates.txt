@@ -74,12 +74,12 @@ types: answer
 users: user
 
 # Link-only
-I [deleted](/help/deleted-answers) this because it consists almost entirely of a link. A link to a solution is welcome, but please ensure your answer is useful without it: [add context around the link](//meta.stackexchange.com/a/8259) so others will have some idea what it is and why it’s there, then quote the most relevant part of the page you're linking to in case the target page is unavailable. If you [edit] this answer to add more once it is deleted, please flag it for moderator attention so that it can be un-deleted.
+I [deleted](/help/deleted-answers) this because it consists almost entirely of a link. A link to a solution is welcome, but please ensure your answer is [useful without it](//meta.stackexchange.com/a/8259): add context around the link so others will have some idea what it is and why it’s there, then quote the most relevant part in case the linked page is unavailable. If you [edit] this answer to add more once it is deleted, please flag it for moderator attention so that it can be un-deleted.
 types: answer
 users: moderator
 
 # Link-only
-I flagged this for [deletion](/help/deleted-answers) because it consists almost entirely of a link. A link to a solution is welcome, but please ensure your answer is useful without it: [add context around the link](//meta.stackexchange.com/a/8259) so others will have some idea what it is and why it’s there, then quote the most relevant part of the page you're linking to in case the target page is unavailable. If you [edit] this answer to add more once it is deleted, please flag it for moderator attention so that it can be un-deleted.
+I flagged this for [deletion](/help/deleted-answers) because it consists almost entirely of a link. A link to a solution is welcome, but please ensure your answer is [useful without it](//meta.stackexchange.com/a/8259): add context around the link so others will have some idea what it is and why it’s there, then quote the most relevant part in case the linked page is unavailable. If you [edit] this answer to add more once it is deleted, please flag it for moderator attention so that it can be un-deleted.
 types: answer
 users: user
 
