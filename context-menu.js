@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.04
+// @version 1.05
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @include /https?\:\/\/([a-z\.]*\.)?(stackexchange|askubuntu|superuser|serverfault|stackoverflow|answers\.onstartups)\.com\/.*/
 // @exclude *://chat.stackoverflow.com/*
@@ -146,7 +146,7 @@
 		loadStorageUrlComments()
 	} else if (!comments || !comments.length){
 		// If there are NO comments, fetch the defaults
-		loadComments("https://ostermiller.deadsea.ostermiller.org/stack-exchange-comments.txt")
+		loadComments("https://raw.githubusercontent.com/stephenostermiller/stack-exchange-comment-templates/master/default-templates.txt")
 	}
 
 	checkCommentLengths()
