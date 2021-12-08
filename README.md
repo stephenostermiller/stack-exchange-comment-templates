@@ -38,8 +38,8 @@ The following variables are expanded by this code within comments:
  - `$OPREP`: The reputation of the person who asked the question
  - `$POSTID`: The ID of the question or answer for which a comment is being written
  - `$AUTHORID`: The user ID of the author of the question or answer for which a comment is being written
- - `$AUTHORNAME`: The user name of the author of the question or answer for which a comment is being written
- - `$AUTHORREP`: The reputation of the author of the question or answer for which a comment is being written (without spaces for @references)
+ - `$AUTHORNAME`: The user name of the author of the question or answer for which a comment is being written (without spaces for @references)
+ - `$AUTHORREP`: The reputation of the author of the question or answer for which a comment is being written
 
 In addition, Stack Exchange expands links such as `[meta]`, `[edit]`, and `[help]`. See [the documentation](//stackoverflow.com/editing-help#comment-formatting) for the full list and explanations.
 
@@ -58,4 +58,4 @@ There are several features of SE-AutoReviewComments that are not implemented her
  - JSONP export
  - Showing the full comment text by default
  - Adding a welcome message to comments for new users
- - No direct extensions for Firefox for Chrome
+ - No direct extensions for Firefox or Chrome
