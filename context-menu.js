@@ -22,7 +22,6 @@
 
 	// Access to JavaScript variables from the Stack Exchange site
 	var $ = unsafeWindow.jQuery
-	var seOpts = unsafeWindow.StackExchange.options || {site:"",user:{}}
 
 	// eg. physics.stackexchange.com -> physics
 	function validateSite(s){
@@ -348,16 +347,15 @@
 
 	// The human readable name of the current Stack Exchange site
 	function getSiteName(){
-		if (!varCache.sitename){
-			varCache.sitename = seOpts.site.name || ""
-			varCache.sitename = varCache.sitename.replace(/ ?Stack Exchange/, "")
-		}
+		if (!varCache.sitename) varCache.sitename = $('meta[property="og:site_name"]').attr('content').replace(/ ?Stack Exchange/, "")
+		console.log("Site name: " + varCache.sitename)
 		return varCache.sitename
 	}
 
 	// The Stack Exchange user id for the person using this tool
 	function getMyUserId() {
-		if (!varCache.myUserId) varCache.myUserId = seOpts.user.userId || ""
+		if (!varCache.myUserId) varCache.myUserId = $('a.my-profile').attr('href').replace(/^\/users\//,"").replace(/\/.*/,"")
+		console.log("User ID: " + varCache.myUserId)
 		return varCache.myUserId
 	}
 
