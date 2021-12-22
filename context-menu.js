@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.05
+// @version 1.07
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @include /https?\:\/\/([a-z\.]*\.)?(stackexchange|askubuntu|superuser|serverfault|stackoverflow|answers\.onstartups)\.com\/.*/
 // @exclude *://chat.stackoverflow.com/*
@@ -155,13 +155,13 @@
 			var length = c.comment.length;
 			if (length > 600){
 				console.log("Comment template is too long (" + length + "/600): " + c.title)
-			} else if (length > 500 && (c.types['flag-question'] || c.types['flag-answer'])){
+			} else if (length > 500 && (!c.types || c.types['flag-question'] || c.types['flag-answer'])){
 				console.log("Comment template is too long for flagging posts (" + length + "/500): " + c.title)
-			} else if (length > 300 && (c.types['edit-question'] || c.types['edit-answer'])){
+			} else if (length > 300 && (!c.types || c.types['edit-question'] || c.types['edit-answer'])){
 				console.log("Comment template is too long for an edit (" + length + "/300): " + c.title)
-			} else if (length > 200 && (c.types['decline-flag'] || c.types['helpful-flag'])){
+			} else if (length > 200 && (!c.types || c.types['decline-flag'] || c.types['helpful-flag'])){
 				console.log("Comment template is too long for flag handling (" + length + "/200): " + c.title)
-			} else if (length > 200 && c.types['flag-comment']){
+			} else if (length > 200 && (!c.types || c.types['flag-comment'])){
 				console.log("Comment template is too long for flagging comments (" + length + "/200): " + c.title)
 			}
 		}
@@ -348,14 +348,12 @@
 	// The human readable name of the current Stack Exchange site
 	function getSiteName(){
 		if (!varCache.sitename) varCache.sitename = $('meta[property="og:site_name"]').attr('content').replace(/ ?Stack Exchange/, "")
-		console.log("Site name: " + varCache.sitename)
 		return varCache.sitename
 	}
 
 	// The Stack Exchange user id for the person using this tool
 	function getMyUserId() {
-		if (!varCache.myUserId) varCache.myUserId = $('a.my-profile').attr('href').replace(/^\/users\//,"").replace(/\/.*/,"")
-		console.log("User ID: " + varCache.myUserId)
+		if (!varCache.myUserId) varCache.myUserId = $('a.my-profile').attr('href').replace(/^\/users\/([0-9]+)\/.*/,"$1")
 		return varCache.myUserId
 	}
 
@@ -715,8 +713,7 @@
 		}
 		ctcmi.append($('<button>Edit</Button>').click(editComments))
 		ctcmi.append($('<button>Cancel</Button>').click(closeMenu))
-		if (target.parents('.popup,#modal-base').length) target.after(ctcmo)
-		else $(document.body).append(ctcmo)
+		target.parents('.popup,#modal-base,body').first().append(ctcmo)
 		ctcmo.show()
 	}
 
