@@ -64,7 +64,7 @@ types: close-question, question
 # Closure: Not programming
 I voted to close this question because it is not a programming question. Rather, it is about [type here].
 sites: stackoverflow
-types: close-question
+types: close-question, question
 
 # Closure: Too much code
 I voted to close this question because the code sample is too long. Please [edit] your post to pare your code down to a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example).
