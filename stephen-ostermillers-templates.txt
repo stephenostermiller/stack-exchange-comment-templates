@@ -20,6 +20,12 @@ sites: stackoverflow
 types: close-question, question
 tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
 
+# Closure: Webmasters site specific
+I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. However, as it is currently worded, this question would be closed as off-topic on Webmasters because it is specific to your site. When you delete this question here and ask it there, please include enough details that it isn't just "what is wrong with my site?" Ideally, you wouldn't need to link to your site at all.
+sites: stackoverflow
+types: close-question, question
+tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+
 # Closure: Webmasters duplicate
 I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. In this case the question has already been asked and answered there: [type here]
 sites: stackoverflow
@@ -44,6 +50,12 @@ sites: stackoverflow
 types: flag-question
 tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
 
+# Closure: WordPress or Webmasters
+I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se] and questions about WordPress development and administration should be asked on [wordpress.se]. Please delete your question here and re-ask it in one of those more appropriate places.
+sites: stackoverflow
+tags: wordpress
+types: close-question, question
+
 # Closure: WordPress
 I voted to close this question because it is not a programming question. Questions about WordPress development and administration should be asked on [wordpress.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
@@ -64,7 +76,7 @@ types: close-question, question
 # Closure: Not programming
 I voted to close this question because it is not a programming question. Rather, it is about [type here].
 sites: stackoverflow
-types: close-question
+types: close-question, question
 
 # Closure: Too much code
 I voted to close this question because the code sample is too long. Please [edit] your post to pare your code down to a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example).
