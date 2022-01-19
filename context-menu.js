@@ -390,7 +390,6 @@
 		// near the item that was clicked
 		var body = $(this).parent().children('.ctcm-body')
 		var socvr = body.attr('data-socvr')
-		console.log(`socvr: ${socvr}`)
 		if (socvr){
 			var url = "//" + getSiteUrl() + "/questions/" + getQuestionId()
 			var title = $('h1').first().text()
