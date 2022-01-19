@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.07
+// @version 1.08
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @include /https?\:\/\/([a-z\.]*\.)?(stackexchange|askubuntu|superuser|serverfault|stackoverflow|answers\.onstartups)\.com\/.*/
 // @exclude *://chat.stackoverflow.com/*
@@ -116,6 +116,14 @@
 		types: validateType
 	}
 
+	var attributeValidators = {
+		socvr: trim
+	}
+
+	function trim(s){
+		return s.trim()
+	}
+
 	// Given a filter tag name and an array of filter tag values,
 	// clean up and canonicalize each of them
 	// Put them into a hash set (map each to true) for performant lookups
@@ -129,6 +137,12 @@
 		}
 		if (Object.keys(ret).length) return ret
 		return null
+	}
+
+	function validateValues(tag, value){
+			if (tag in tagValidators) return validateAllTagValues(tag, value.split(/,/))
+			if (tag in attributeValidators) return attributeValidators[tag](value)
+			return null
 	}
 
 	// List of keys used for storage, centralized for multiple usages
@@ -184,7 +198,7 @@
 				var m = /^(?:\[([A-Z,]+)\])\s*(.*)$/.exec(c.title);
 				if (m){
 					c.title=m[2]
-					c.types=validateAllTagValues("types",m[1].split(/,/))
+					c.types=validateValues("types",m[1])
 				}
 				if (c && c.title && c.comment) cs.push(c)
 			}
@@ -217,13 +231,13 @@
 					// Start a new comment with title
 					c={title:m[2]}
 					// Handle type filter tags if they exist
-					if (m[1]) c.types=validateAllTagValues("types",m[1].split(/,/))
+					if (m[1]) c.types=validateValues("types",m[1])
 				} else if (c) {
 					// Already started parsing a comment, look for filter tags and comment body
-					m = /^(sites|types|users|tags)\:\s*(.*)$/.exec(line);
+					m = /^(sites|types|users|tags|socvr)\:\s*(.*)$/.exec(line);
 					if (m){
 						// Add filter tags
-						c[m[1]]=validateAllTagValues(m[1], m[2].split(/,/))
+						c[m[1]]=validateValues(m[1],m[2])
 					} else {
 						// Comment body (join multiple lines with spaces)
 						if (c.comment) c.comment=c.comment+" "+line
@@ -256,6 +270,7 @@
 			if (c.sites) s += "sites: " + sort(c.sites).join(", ") + "\n"
 			if (c.users) s += "users: " + sort(c.users).join(", ") + "\n"
 			if (c.tags) s += "tags: " + sort(c.tags).join(", ") + "\n"
+			if (c.socvr) s += "socvr: " + c.socvr + "\n"
 			s += "\n"
 		}
 		return s;
@@ -373,7 +388,16 @@
 	function insertComment(){
 		// The comment to insert is stored in a div
 		// near the item that was clicked
-		var cmt = $(this).parent().children('.ctcm-body').text()
+		var body = $(this).parent().children('.ctcm-body')
+		var socvr = body.attr('data-socvr')
+		console.log(`socvr: ${socvr}`)
+		if (socvr){
+			var url = "//" + getSiteUrl() + "/questions/" + getQuestionId()
+			var title = $('h1').first().text()
+			title = new Option(title).innerHTML
+			$('#content').prepend($(`<div style="border:5px solid blue;padding:.7em;margin:.5em 0"><a target=_blank href=//chat.stackoverflow.com/rooms/41570/so-close-vote-reviewers>SOCVR: </a><div>[tag:cv-pls] ${socvr} [${title}](${url})</div></div>`))
+		}
+		var cmt = body.text()
 
 		// Put in the comment
 		commentTextField.val(cmt).focus()
@@ -429,8 +453,9 @@
 			"types: "+typeMapInput.replace(/,/g, ", ")+"\n"+
 			"users: "+userMapInput.replace(/,/g, ", ")+"\n"+
 			"sites: stackoverflow, physics, meta.stackoverflow, physics.meta, etc\n"+
-			"tags: javascript, python, etc</pre>"+
-			"<p>Limiting by types, users, sites, and tags is optional.</p>"
+			"tags: javascript, python, etc\n"+
+			"socvr: Message for Stack Overflow close vote reviews chat</pre>"+
+			"<p>types, users, sites, tags, and socvr are optional.</p>"
 	   )
 		ctcmi.append($('<textarea>').val(exportComments()))
 		ctcmi.append($('<button>Save</Button>').click(doneEditing))
@@ -706,7 +731,7 @@
 					).append(
 						$('<h4 class=ctcm-title>').text(comments[i].title).click(insertComment)
 					).append(
-						$('<div class=ctcm-body>').text(fillVariables(comments[i].comment)).click(insertComment)
+						$('<div class=ctcm-body>').text(fillVariables(comments[i].comment)).click(insertComment).attr('data-socvr',comments[i].socvr||"")
 					)
 				)
 			}

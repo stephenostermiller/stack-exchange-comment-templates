@@ -13,30 +13,35 @@ I voted to close this question because it is not a programming question and it i
 sites: stackoverflow
 types: close-question, question
 tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+socvr: Not programming, ask on Webmasters
 
 # Closure: Webmasters needs clarity
 This is not a programming question and it is off-topic on Stack Overflow. Please [edit] the question to address the points that need to be clarified, then re-ask it on [webmasters.se] and delete it here.
 sites: stackoverflow
 types: close-question, question
 tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+socvr: Not programming, clarify then ask on Webmasters
 
 # Closure: Webmasters site specific
 I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. However, as it is currently worded, this question would be closed as off-topic on Webmasters because it is specific to your site. When you delete it here and ask it there, please include enough details that it isn't just "what is wrong with my site?" Ideally, you wouldn't need to link to your site at all.
 sites: stackoverflow
 types: close-question, question
 tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+socvr: Not programming, remove link then ask on Webmasters
 
 # Closure: Webmasters duplicate
 I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. In this case the question has already been asked and answered there: [type here]
 sites: stackoverflow
 types: close-question, question
 tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+socvr: Not programming, already answered on Webmasters
 
 # Closure: Webmasters recommendation
 I voted to close this question because it asks for recommendations of external websites, tools, resources, or software. It is also not a programming question so it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. If you can remove the request for recommendations, please delete your question here and re-ask it there.
 sites: stackoverflow
 types: close-question, question
 tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+socvr: Not programming, remove recommendation request then ask on Webmasters
 
 # Closure: Webmasters flagged
 I flagged this question to be moved to [webmasters.se] because it is not a programming question that is on-topic here. Because this question already has an answer, please wait for it be moved rather than re-asking it there.
@@ -55,48 +60,57 @@ I voted to close this question because it is not a programming question and it i
 sites: stackoverflow
 tags: wordpress
 types: close-question, question
+socvr: Not programming, ask on Webmasters or WordPress
 
 # Closure: WordPress
 I voted to close this question because it is not a programming question. Questions about WordPress development and administration should be asked on [wordpress.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
 tags: wordpress
 types: close-question, question
+socvr: Not programming, ask on WordPress
 
 # Closure: Drupal
 I voted to close this question because it is not a programming question. Questions about Drupal development and administration should be asked on [drupal.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
 tags: drupal, drupal-6, drupal-7, drupal-8, drupal-modules, drupal-views
 types: close-question, question
+socvr: Not programming, ask on Drupal
 
 # Closure: ServerFault
 I voted to close this question because it is not a programming question. Questions about managing your servers should be asked on [sf]. Please delete your question here and re-ask it there.
 sites: stackoverflow
 types: close-question, question
+socvr: Not programming, ask on ServerFault
 
 # Closure: Not programming
 I voted to close this question because it is not a programming question. Rather, it is about [type here].
 sites: stackoverflow
 types: close-question, question
+socvr: Not programming
 
 # Closure: Too much code
 I voted to close this question because the code sample is too long. Please [edit] your post to pare your code down to a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example).
 sites: stackoverflow
 types: close-question, question
+socvr: Too much code
 
 # Closure: No code
 I voted to close this question because there is no example code. Please [edit] your post to include a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example).
 sites: stackoverflow
 types: close-question, question
+socvr: No mcve
 
 # Closure: 3rd-party service
 I voted to close this question because questions asking for [customer support with third-party services](//meta.stackoverflow.com/questions/255745) (such as App Stores) are off-topic for Stack Overflow. Instead, please direct your questions to the relevant company/organisation's technical support team.
 sites: stackoverflow
 types: close-question, question
+socvr: 3rd-party service
 
 # Closure: More than one question
 I voted to close this post because it asks more than one question. Please post questions separately instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will be able to find the answer. You may [edit] this post to pare it down to a single question and create separate posts for additional questions.
 types: close-question, question
 users: user
+socvr: More than one question
 
 # Closure: More than one question
 I closed this post because it asks more than one question. Please post questions separately instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will find the answer. You may [edit] this post to pare it down to a single question and create separate posts for additional questions.
@@ -107,6 +121,7 @@ users: moderators
 I voted to close this question because the topic is too broad to cover in a few paragraphs here. A full answer would require many pages or even an entire book. Please [edit] your question to narrow the focus to the specific problem you encounter first. Once you have done that the question will be reviewed and reopened.
 types: close-question, question
 users: user
+socvr: Too broad
 
 # Closure: Requires book
 I closed this question because the topic is too broad to cover in a few paragraphs here. A full answer would require many pages or even an entire book. Please [edit] your question to narrow the focus to the specific problem you encounter first. Once you have done that the question will be reviewed and reopened.
@@ -142,10 +157,12 @@ users: moderator
 # Closure: Debugging details
 Please [edit] your question to say more about what isn't working. Do you see an error message? If so, what is it? It is not producing the expected output? If not, what output do you see and what output do you expect?
 types: close-question, question
+socvr: Needs debugging details
 
 # Closure: Text screenshots
 Please [edit] to paste the text used in the image into your question so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your image makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question). See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
 types: close-question, question
+socvr: Text screenshots
 
 # Closure: 500 error
 I closed this question because a 500 error is a very generic "something went wrong" error. It could be a misconfiguration, a permissions problem, or a coding error. More information about the specific cause of your error is available in your server's error log. There is no way to accurately answer this question without seeing the logs. Any answers here will be guesses and there are hundreds if not thousands of possible answers.
@@ -158,6 +175,7 @@ I voted to close this question because a 500 error is a very generic "something 
 types: close-question, question
 sites: serverfault, stackoverflow, webmasters
 users: user
+socvr: Needs debugging details
 
 # Deletion: New question
 I [deleted](/help/deleted-answers) this because it asks a question rather than provides an answer. To get an answer to your question, start by [searching for similar questions](/search) or referring to the related questions linked on this page. If your question hasn't already been asked, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
