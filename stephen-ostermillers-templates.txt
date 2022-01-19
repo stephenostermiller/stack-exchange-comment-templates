@@ -135,6 +135,18 @@ types: close-question, question
 Please [edit] this question to type the text from the image so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your image makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question). See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
 types: close-question, question
 
+# Closure: 500 error
+I closed this question because a 500 error is a very generic "something went wrong" error. It could be a misconfiguration, a permissions problem, or a coding error. More information about the specific cause of your error is available in your server's error log. There is no way to accurately answer this question without seeing the logs. Any answers here will be guesses and there are hundreds if not thousands of possible answers.
+types: close-question, question
+sites: serverfault, stackoverflow, webmasters
+users: moderator
+
+# Closure: 500 error
+I voted to close this question because a 500 error is a very generic "something went wrong" error. It could be a misconfiguration, a permissions problem, or a coding error. More information about the specific cause of your error is available in your server's error log. There is no way to accurately answer this question without seeing the logs. Any answers here will be guesses and there are hundreds if not thousands of possible answers.
+types: close-question, question
+sites: serverfault, stackoverflow, webmasters
+users: user
+
 # Deletion: New question
 I [deleted](/help/deleted-answers) this because it asks a question rather than provides an answer. To get an answer to your question, start by [searching for similar questions](/search) or referring to the related questions linked on this page. If your question hasn't already been asked, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
 types: answer
