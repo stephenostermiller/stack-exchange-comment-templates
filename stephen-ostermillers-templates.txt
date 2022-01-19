@@ -21,7 +21,7 @@ types: close-question, question
 tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
 
 # Closure: Webmasters site specific
-I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. However, as it is currently worded, this question would be closed as off-topic on Webmasters because it is specific to your site. When you delete this question here and ask it there, please include enough details that it isn't just "what is wrong with my site?" Ideally, you wouldn't need to link to your site at all.
+I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. However, as it is currently worded, this question would be closed as off-topic on Webmasters because it is specific to your site. When you delete it here and ask it there, please include enough details that it isn't just "what is wrong with my site?" Ideally, you wouldn't need to link to your site at all.
 sites: stackoverflow
 types: close-question, question
 tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
@@ -144,7 +144,7 @@ Please [edit] your question to say more about what isn't working. Do you see an 
 types: close-question, question
 
 # Closure: Text screenshots
-Please [edit] this question to type the text from the image so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your image makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question). See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
+Please [edit] to paste the text used in the image into your question so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your image makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question). See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
 types: close-question, question
 
 # Closure: 500 error
@@ -254,7 +254,7 @@ types: flag-question
 users: user
 
 # Low quality: Text screenshots
-Please [edit] this answer to type the text from the image so that it can be read on all devices, edited, copied as text, and found through search. As it stands now, your image makes it hard to view and use your answer. See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
+Please [edit] to paste the text used in the image into your answer so that it can be read on all devices, edited, copied as text, and found through search. As it stands now, your image makes it hard to view and use your answer. See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
 types: answer
 
 # Low quality: Code-only

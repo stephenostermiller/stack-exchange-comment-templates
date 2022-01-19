@@ -60,7 +60,7 @@ Please [edit] your question to say more about what isn't working. Do you see an 
 types: close-question, question
 
 # Closure: Text screenshots
-Please [edit] this question to type the text from the image so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your image makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question). See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
+Please [edit] to paste the text used in the image into your question so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your image makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question). See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
 types: close-question, question
 
 # Deletion: New question
@@ -158,7 +158,7 @@ types: flag-question
 users: user
 
 # Low quality: Text screenshots
-Please [edit] this answer to type the text from the image so that it can be read on all devices, edited, copied as text, and found through search. As it stands now, your image makes it hard to view and use your answer. See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
+Please [edit] to paste the text used in the image into your answer so that it can be read on all devices, edited, copied as text, and found through search. As it stands now, your image makes it hard to view and use your answer. See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
 types: answer
 
 # Low quality: Code-only
