@@ -106,6 +106,11 @@ sites: stackoverflow
 types: close-question, question
 socvr: No effort, homework
 
+# Closure: External code
+I voted to close this question because the sample code is linked externally. Please [edit] this question to include your code directly in your question. Code linked externally may not be permanently available, and may not be licensed such that it can be used in answers. 
+types: close-question, question
+socvr: External code
+
 # Closure: No code
 I voted to close this question because there is no example code. Please [edit] your post to include a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example).
 sites: stackoverflow
