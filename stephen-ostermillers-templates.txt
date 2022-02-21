@@ -101,7 +101,7 @@ types: close-question, question
 socvr: No effort
 
 # Closure: No effort, homework
-I voted to close this question because Stack Overflow is [not a place to ask other to do your homework for you](//meta.stackoverflow.com/questions/334822/how-do-i-ask-and-answer-homework-questions). Your question is expected to show a good faith effort to solve the problem on your own. Please [edit] your question to show your work and provide a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example) of what you tried. Then explain where you ran into problems, what results are unexpected, and what errors you get.
+I voted to close this question because this is [not a place to ask other to do your homework for you](//meta.stackoverflow.com/questions/334822). Your question is expected to show a good faith effort to solve the problem on your own. Please [edit] your question to show your work and provide a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example) of what you tried. Then explain where you ran into problems, what results are unexpected, and what errors you get.
 sites: stackoverflow
 types: close-question, question
 socvr: No effort, homework
