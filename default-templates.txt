@@ -186,6 +186,14 @@ types: question
 Rather than adding details in comments, please [edit] your answer to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice. Editing updates into your answer ensures that they don't get lost and that everybody who wants to use your answer sees them.
 types: answer
 
+# Comment: OP "thanks"
+Rather than commenting to say "thanks," you should show your appreciation by clicking the check mark to the left of this answer to mark it as "accepted." Doing so awards 15 reputation points to the author and visually shows others that the answer solved your problem. You can also click the up arrow there to vote the answer up. Doing so awards an additional 10 reputation points to the author and increments the score of the answer. The top scored answer is sorted to the top which helps other people with similar problems find it.
+types: answer
+
+# Comment: "thanks"
+Rather than commenting to say "thanks," you should show your appreciation by clicking the up arrow to the left of this answer to vote it up. Doing so awards 10 reputation points to the author and increments the score of the answer. The top scored answer is sorted to the top which helps other people with similar problems find it.
+types: answer
+
 # Comment: Should be answer
 That should be posted as an answer rather than as a comment. Comments are temporary and cannot be accepted as an answer. There is no mechanism for converting comments to answers, so I cannot do it for you. You will need to copy your comment into the answer box and then delete your comment.
 types: question
