@@ -4,7 +4,7 @@ types: close-question, question
 sites: webmasters
 
 # Closure: Programming
-I voted to close this question because programming and web development questions are off-topic here and should be asked on [so]. Before you ask there, you need to make your example minimal. You need to pare it down to just a small section of no more than 10 lines that demonstrates the problem.
+I voted to close this question because programming and web development questions are off-topic here and should be asked on [so]. Before you ask there, you need to make your example minimal. You need to reduce it to just a small section of no more than 10 lines that demonstrates the problem.
 types: close-question, question
 sites: webmasters
 
@@ -12,48 +12,48 @@ sites: webmasters
 I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
 types: close-question, question
-tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+tags: apache, canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, http, https, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, server, http-redirect, google-analytics
 socvr: Not programming, ask on Webmasters
 
 # Closure: Webmasters needs clarity
 This is not a programming question and it is off-topic on Stack Overflow. Please [edit] the question to address the points that need to be clarified, then re-ask it on [webmasters.se] and delete it here.
 sites: stackoverflow
 types: close-question, question
-tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+tags: apache, canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, http, https, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, server, http-redirect, google-analytics
 socvr: Not programming, clarify then ask on Webmasters
 
 # Closure: Webmasters site specific
 I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. However, as it is currently worded, this question would be closed as off-topic on Webmasters because it is specific to your site. When you delete it here and ask it there, please include enough details that it isn't just "what is wrong with my site?" Ideally, you wouldn't need to link to your site at all.
 sites: stackoverflow
 types: close-question, question
-tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+tags: apache, canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, http, https, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, server, http-redirect, google-analytics
 socvr: Not programming, remove link then ask on Webmasters
 
 # Closure: Webmasters duplicate
 I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. In this case the question has already been asked and answered there: [type here]
 sites: stackoverflow
 types: close-question, question
-tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+tags: apache, canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, http, https, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, server, http-redirect, google-analytics
 socvr: Not programming, already answered on Webmasters
 
 # Closure: Webmasters recommendation
 I voted to close this question because it asks for recommendations of external websites, tools, resources, or software. It is also not a programming question so it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. If you can remove the request for recommendations, please delete your question here and re-ask it there.
 sites: stackoverflow
 types: close-question, question
-tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+tags: apache, canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, http, https, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, server, http-redirect, google-analytics
 socvr: Not programming, remove recommendation request then ask on Webmasters
 
 # Closure: Webmasters flagged
 I flagged this question to be moved to [webmasters.se] because it is not a programming question that is on-topic here. Because this question already has an answer, please wait for it be moved rather than re-asking it there.
 sites: stackoverflow
 types: close-question, question
-tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+tags: apache, canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, http, https, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, server, http-redirect, google-analytics
 
 # Closure: Move to Webmasters
 Please move this question and its answers to webmasters. I'm a moderator on webmasters. This question would be on-topic there.
 sites: stackoverflow
 types: flag-question
-tags: canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, http-redirect, google-analytics
+tags: apache, canonicalization, canonical-link, googlebot, google-crawlers, google-search, google-search-console, hosting, http, https, noindex, robots.txt, search-engine, search-engine-bots, seo, sitemap, web, web-hosting, web-site-project, url, .htaccess, webserver, url-rewriting, mod-rewrite, redirect, server, http-redirect, google-analytics
 
 # Closure: WordPress or Webmasters
 I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se] and questions about WordPress development and administration should be asked on [wordpress.se]. Please delete your question here and re-ask it in one of those more appropriate places.
@@ -89,16 +89,10 @@ types: close-question, question
 socvr: Not programming
 
 # Closure: Too much code
-I voted to close this question because the code sample is too long. Please [edit] your post to pare your code down to a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example).
+I voted to close this question because the code sample is too long. Please [edit] your post to reduce your code to a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example).
 sites: stackoverflow
 types: close-question, question
 socvr: Too much code
-
-# Closure: No effort
-I voted to close this question because Stack Overflow is not a code writing service. Your question is expected to show a good faith effort to solve the problem on your own. Please [edit] your question to show your work and provide a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example) of what you tried. Then explain where you ran into problems, what results are unexpected, and what errors you get.
-sites: stackoverflow
-types: close-question, question
-socvr: No effort
 
 # Closure: No effort, homework
 I voted to close this question because this is [not a place to ask other to do your homework for you](//meta.stackoverflow.com/questions/334822). Your question is expected to show a good faith effort to solve the problem on your own. Please [edit] your question to show your work and provide a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example) of what you tried. Then explain where you ran into problems, what results are unexpected, and what errors you get.
@@ -124,13 +118,13 @@ types: close-question, question
 socvr: 3rd-party service
 
 # Closure: More than one question
-I voted to close this post because it asks more than one question. Please post questions separately instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will be able to find the answer. You may [edit] this post to pare it down to a single question and create separate posts for additional questions.
+I voted to close this post because it asks more than one question. Please post questions separately instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will be able to find the answer. You may [edit] this post to reduce it to a single question and create separate posts for additional questions.
 types: close-question, question
 users: user
 socvr: More than one question
 
 # Closure: More than one question
-I closed this post because it asks more than one question. Please post questions separately instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will find the answer. You may [edit] this post to pare it down to a single question and create separate posts for additional questions.
+I closed this post because it asks more than one question. Please post questions separately instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will find the answer. You may [edit] this post to reduce it to a single question and create separate posts for additional questions.
 types: close-question, question
 users: moderators
 
@@ -291,6 +285,11 @@ users: user
 # Low quality: Text screenshots
 Please [edit] to paste the text used in the image into your answer so that it can be read on all devices, edited, copied as text, and found through search. As it stands now, your image makes it hard to view and use your answer. See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
 types: answer
+
+# Low quality: No effort
+Your question would be better received if you showed good faith effort to solve the problem on your own. Please [edit] your question to show your work and provide a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example) of what you tried. Then explain where you ran into problems, what results are unexpected, and what errors you get.
+sites: stackoverflow
+types: question
 
 # Low quality: Code-only
 [A code-only answer is not high quality](//meta.stackoverflow.com/questions/392712/explaining-entirely-code-based-answers). While this code may be useful, you can improve it by saying why it works, how it works, when it should be used, and what its limitations are. Please [edit] your answer to include explanation and link to relevant documentation.
