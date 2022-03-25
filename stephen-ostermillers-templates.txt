@@ -128,11 +128,23 @@ I closed this post because it asks more than one question. Please post questions
 types: close-question, question
 users: moderators
 
+# Closure: Getting started or approach
+I voted to close this question because there are usually hundreds of ways to implement a feature; too many to enumerate here. Furthermore, a full answer to any one of them could require many pages or even a full book. Rather than asking for an approach, [edit] your question to focus on a more specific problem you encounter when you actually try to implement it yourself.
+types: close-question, question
+users: user
+socvr: Needs focus
+
+# Closure: Getting started or approach
+I closed this question because there are usually hundreds of ways to implement a feature; too many to enumerate here. Furthermore, a full answer to any one of them could require many pages or even a full book. Rather than asking for an approach, [edit] your question to focus on a more specific problem you encounter when you actually try to implement it yourself.
+types: close-question, question
+users: moderators
+socvr: Needs focus
+
 # Closure: Requires book
 I voted to close this question because the topic is too broad to cover in a few paragraphs here. A full answer would require many pages or even an entire book. Please [edit] your question to narrow the focus to the specific problem you encounter first. Once you have done that the question will be reviewed and reopened.
 types: close-question, question
 users: user
-socvr: Too broad
+socvr: Needs focus
 
 # Closure: Requires book
 I closed this question because the topic is too broad to cover in a few paragraphs here. A full answer would require many pages or even an entire book. Please [edit] your question to narrow the focus to the specific problem you encounter first. Once you have done that the question will be reviewed and reopened.
