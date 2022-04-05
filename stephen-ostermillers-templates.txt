@@ -94,12 +94,6 @@ sites: stackoverflow
 types: close-question, question
 socvr: Too much code
 
-# Closure: No effort, homework
-I voted to close this question because this is [not a place to ask other to do your homework for you](//meta.stackoverflow.com/questions/334822). Your question is expected to show a good faith effort to solve the problem on your own. Please [edit] your question to show your work and provide a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example) of what you tried. Then explain where you ran into problems, what results are unexpected, and what errors you get.
-sites: stackoverflow
-types: close-question, question
-socvr: No effort, homework
-
 # Closure: External code
 I voted to close this question because the sample code is linked externally. Please [edit] this question to include your code directly in your question. Code linked externally may not be permanently available, and may not be licensed such that it can be used in answers. 
 types: close-question, question
@@ -297,6 +291,12 @@ users: user
 # Low quality: Text screenshots
 Please [edit] to paste the text used in the image into your answer so that it can be read on all devices, edited, copied as text, and found through search. As it stands now, your image makes it hard to view and use your answer. See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
 types: answer
+
+# Low quality: No effort, homework
+Your question would be better received if you showed good faith effort to solve the problem on your own rather than just asking others to do your homework for you. See [How do I ask homework questions?](//meta.stackoverflow.com/questions/334822). Please [edit] your question to show your work and provide a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example) of what you tried. Then explain where you ran into problems, what results are unexpected, and what errors you get.
+sites: stackoverflow
+types: close-question, question
+socvr: No effort, homework
 
 # Low quality: No effort
 Your question would be better received if you showed good faith effort to solve the problem on your own. Please [edit] your question to show your work and provide a [minimal, complete, readable, and reproducible example](/help/minimal-reproducible-example) of what you tried. Then explain where you ran into problems, what results are unexpected, and what errors you get.
