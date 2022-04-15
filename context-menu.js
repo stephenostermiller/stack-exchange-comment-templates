@@ -1,9 +1,20 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.08
+// @version 1.09
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
-// @include /https?\:\/\/([a-z\.]*\.)?(stackexchange|askubuntu|superuser|serverfault|stackoverflow|answers\.onstartups)\.com\/.*/
+// @match *://stackexchange.com/*
+// @match *://stackoverflow.com/*
+// @match *://askubuntu.com/*
+// @match *://superuser.com/*
+// @match *://serverfault.com/*
+// @match *://answers.onstartups.com/*
+// @match *://*.stackexchange.com/*
+// @match *://*.stackoverflow.com/*
+// @match *://*.askubuntu.com/*
+// @match *://*.superuser.com/*
+// @match *://*.serverfault.com/*
+// @match *://*.answers.onstartups.com/*
 // @exclude *://chat.stackoverflow.com/*
 // @exclude *://chat.stackexchange.com/*
 // @exclude *://chat.*.stackexchange.com/*
@@ -331,7 +342,7 @@
 	function getUserClass(){
 		if (!userclass){
 			if ($('.js-mod-inbox-button').length) userclass="moderator"
-			else if ($('.my-profile').length) userclass="user"
+			else if ($('.s-topbar--item.s-user-card').length) userclass="user"
 			else userclass="anonymous"
 		}
 		return userclass
@@ -368,7 +379,7 @@
 
 	// The Stack Exchange user id for the person using this tool
 	function getMyUserId() {
-		if (!varCache.myUserId) varCache.myUserId = $('a.my-profile').attr('href').replace(/^\/users\/([0-9]+)\/.*/,"$1")
+		if (!varCache.myUserId) varCache.myUserId = $('a.s-topbar--item.s-user-card').attr('href').replace(/^\/users\/([0-9]+)\/.*/,"$1")
 		return varCache.myUserId
 	}
 
