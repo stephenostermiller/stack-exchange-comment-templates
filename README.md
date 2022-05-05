@@ -5,7 +5,7 @@ If you are tired of typing the same comments into Stack Exchange sites over and 
 ## Installation
 
 1. Install a user script extension (such as [Tampermonkey](https://www.tampermonkey.net/)) for your browser.  [Greasy Fork](https://greasyfork.org/en) maintains a list of user script extensions that are available for various browsers.
-2. Install context-menu.js within your user script manager. It is easiest to press the "Install" button on the [Greasy Fork page for this extension](https://greasyfork.org/en/scripts/433721-stack-exchange-comment-template-context-menu).
+2. Install context-menu.js within your user script manager. It's easiest to press the "Install" button on the [Greasy Fork page for this extension](https://greasyfork.org/en/scripts/433721-stack-exchange-comment-template-context-menu).
 
 ## Getting started
 
@@ -18,7 +18,7 @@ Trigger a context menu on the field where you write a comment by right-clicking,
  - Does not show a context menu for comment boxes that have been filled in allowing you to use the standard context menu for features like spell check.
  - An import/export text file format
  - Load comments from a URL (Hosting comment templates on Github works great.)
- - Comment templates are stored is user script storage that persists across all Stack Exchange sites (no need to configure your comments per site.)
+ - Comment templates are stored in user script storage that persists across all Stack Exchange sites (no need to configure your comments per site.)
  - Set comment templates to be available only in specific contexts:
    - Only on specific types of comments (eg. comments on answers)
    - Only for moderators or for non-moderators

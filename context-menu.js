@@ -345,7 +345,7 @@
 		return userclass
 	}
 
-	// The Stack Exchange site this is run on (just the subdoman, eg "stackoverflow")
+	// The Stack Exchange site this is run on (just the subdomain, eg "stackoverflow")
 	var site
 	function getSite(){
 		if(!site) site=validateSite(location.hostname)
