@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.10
+// @version 1.11
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @match https://*.stackexchange.com/questions/*
 // @match https://*.stackexchange.com/review/*
@@ -231,7 +231,7 @@
 				// Starts with #
 				// May contain type filter tag abbreviations (for compat with SE-AutoReviewComments)
 				// eg # Comment title
-				// eg ### [Q,A] Commment title
+				// eg ### [Q,A] Comment title
 				m = /^#+\s*(?:\[([A-Z,]+)\])?\s*(.*)$/.exec(line);
 				if (m){
 					// Stash previous comment if it wasn't already ended by a new line
@@ -720,6 +720,27 @@
 		},300)
 	}
 
+	function filterComments(e){
+		if (e.key === "Enter") {
+			// Pressing enter in the comment filter
+			// should insert the first visible comment
+			insertComment.call($('.ctcm-title:visible').first())
+			e.preventDefault()
+			return false
+		}
+		if (e.key == "Escape"){
+			closeMenu()
+			e.preventDefault()
+			return false
+		}
+		// Show comments that contain the filter (case-insensitive)
+		var f = $(this).val().toLowerCase()
+		$('.ctcm-comment').each(function(){
+			var c = $(this).text().toLowerCase()
+			$(this).toggle(c.includes(f))
+		})
+	}
+
 	var varCache={} // Cache variables so they don't have to be looked up for every single question
 	function showMenu(target){
 		varCache={} // Clear the variable cache
@@ -729,6 +750,8 @@
 		var site = getSite()
 		var tags = getTags()
 		ctcmi.html("")
+		var filter=$('<input type=text placeholder="filter... (type then press enter to insert the first comment)">').keyup(filterComments).change(filterComments)
+		ctcmi.append(filter)
 		//logVars()
 		for (var i=0; i<comments.length; i++){
 			if(commentMatches(comments[i], type, user, site, tags)){
@@ -747,6 +770,7 @@
 		ctcmi.append($('<button>Cancel</Button>').click(closeMenu))
 		target.parents('.popup,#modal-base,body').first().append(ctcmo)
 		ctcmo.show()
+		filter.focus()
 	}
 
 	function closeMenu(){
