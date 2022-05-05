@@ -1,25 +1,22 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.09
+// @version 1.10
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
-// @match *://stackexchange.com/*
-// @match *://stackoverflow.com/*
-// @match *://askubuntu.com/*
-// @match *://superuser.com/*
-// @match *://serverfault.com/*
-// @match *://answers.onstartups.com/*
-// @match *://*.stackexchange.com/*
-// @match *://*.stackoverflow.com/*
-// @match *://*.askubuntu.com/*
-// @match *://*.superuser.com/*
-// @match *://*.serverfault.com/*
-// @match *://*.answers.onstartups.com/*
-// @exclude *://chat.stackoverflow.com/*
-// @exclude *://chat.stackexchange.com/*
-// @exclude *://chat.*.stackexchange.com/*
-// @exclude *://api.*.stackexchange.com/*
-// @exclude *://data.stackexchange.com/*
+// @match https://*.stackexchange.com/questions/*
+// @match https://*.stackexchange.com/review/*
+// @match https://*.stackoverflow.com/*questions/*
+// @match https://*.stackoverflow.com/review/*
+// @match https://*.askubuntu.com/questions/*
+// @match https://*.askubuntu.com/review/*
+// @match https://*.superuser.com/questions/*
+// @match https://*.superuser.com/review/*
+// @match https://*.serverfault.com/questions/*
+// @match https://*.serverfault.com/review/*
+// @match https://*.mathoverflow.net/questions/*
+// @match https://*.mathoverflow.net/review/*
+// @match https://*.stackapps.com/questions/*
+// @match https://*.stackapps.com/review/*
 // @connect raw.githubusercontent.com
 // @connect *
 // @grant GM_addStyle
