@@ -289,8 +289,8 @@
 	// outer translucent lightbox background that covers the whole page
 	var ctcmo = $('<div id=ctcm-back>').append(ctcmi)
 	GM_addStyle("#ctcm-back{z-index:999998;display:none;position:fixed;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,.5)}")
-	GM_addStyle("#ctcm-menu{z-index:999999;min-width:320px;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:white;border:5px solid var(--theme-header-foreground-color);padding:1em;max-width:100vw;max-height:100vh;overflow:auto}")
-	GM_addStyle(".ctcm-body{display:none;background:#EEE;padding:.3em;cursor: pointer;")
+	GM_addStyle("#ctcm-menu{z-index:999999;min-width:320px;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--white);border:5px solid var(--theme-header-foreground-color);padding:1em;max-width:100vw;max-height:100vh;overflow:auto}")
+	GM_addStyle(".ctcm-body{display:none;background:var(--black-050);padding:.3em;cursor: pointer;")
 	GM_addStyle(".ctcm-expand{float:right;cursor: pointer;}")
 	GM_addStyle(".ctcm-title{margin-top:.3em;cursor: pointer;}")
 	GM_addStyle("#ctcm-menu textarea{width:90vw;min-width:300px;max-width:1000px;height:60vh;resize:both;display:block}")

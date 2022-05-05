@@ -105,11 +105,11 @@ sites: stackoverflow
 types: close-question, question
 socvr: No mcve
 
-# Closure: 3rd-party service
-I voted to close this question because questions asking for [customer support with third-party services](//meta.stackoverflow.com/questions/255745) (such as App Stores) are off-topic for Stack Overflow. Instead, please direct your questions to the relevant company/organisation's technical support team.
+# Closure: 3rd-party support
+I voted to close this question because questions asking for [customer support with third-party services](//meta.stackoverflow.com/questions/255745) (such as app stores or remote APIs) are off-topic for Stack Overflow. Instead, please direct your questions to the relevant company/organization's technical support team.
 sites: stackoverflow
 types: close-question, question
-socvr: 3rd-party service
+socvr: Needs customer service
 
 # Closure: More than one question
 I voted to close this post because it asks more than one question. Please post questions separately instead of combining your questions into one. Doing so ensures that your question is answered fully and that people with similar problems in the future will be able to find the answer. You may [edit] this post to reduce it to a single question and create separate posts for additional questions.
@@ -215,7 +215,7 @@ types: answer
 users: user
 
 # Deletion: Link-only
-I [deleted](/help/deleted-answers) this because it consists almost entirely of a link. A link to a solution is welcome, but please ensure your answer is [useful without it](//meta.stackexchange.com/a/8259): add context around the link so others will have some idea what it is and why it’s there, then quote the most relevant part in case the linked page is unavailable. If you [edit] this answer to add more once it is deleted, please flag it for moderator attention so that it can be un-deleted.
+I [deleted](/help/deleted-answers) this because it consists almost entirely of a link. A link to a solution is welcome, but please ensure your answer is [useful without it](//meta.stackexchange.com/a/8259): add context around the link so others will have some idea what it is and why it’s there, then quote the most relevant part in case the linked page is unavailable. If you [edit] this answer to add more, please flag it for moderator attention so that we can un-delete it.
 types: answer
 users: moderator
 
@@ -260,12 +260,12 @@ types: answer
 users: user
 
 # Deletion: Plagiarism
-I [deleted](/help/deleted-answers) this because [too much is copied and pasted from other sources](/help/referencing). Please limit the amount of content copied from other sources to just a few sentences that can be defended as “fair use” for copyright purposes. Use quote formatting and a link back to the original when using a third party snippet. Always include your own unique commentary alongside any quoted material. If you [edit] to remove the plagiarism, please flag for moderator attention so that we can un-delete.
+I [deleted](/help/deleted-answers) this because [too much is copied and pasted from other sources](/help/referencing). Please limit the amount of content copied from other sources to just a few sentences that can be defended as “fair use” for copyright purposes. Use quote formatting and a link back to the original when using a third party snippet. Always include your own unique commentary alongside any quoted material. If you [edit] to remove the plagiarism, please flag it for moderator attention so that we can un-delete it.
 types: answer, question
 users: moderator
 
 # Deletion: Plagiarism
-I flagged this for [deletion](/help/deleted-answers) because [too much is copied and pasted from other sources](/help/referencing). Please limit the amount of content copied from other sources to just a few sentences that can be defended as “fair use” for copyright purposes. Use quote formatting and a link back to the original when using a third party snippet. Always include your own unique commentary alongside any quoted material. If your post has already been deleted when you [edit] to remove the plagiarism, please flag for moderator attention so that it can be un-deleted.
+I flagged this for [deletion](/help/deleted-answers) because [too much is copied and pasted from other sources](/help/referencing). Please limit the amount of content copied from other sources to just a few sentences that can be defended as “fair use” for copyright purposes. Use quote formatting and a link back to the original when using a third party snippet. Always include your own unique commentary alongside any quoted material. If your post has already been deleted when you [edit] to remove the plagiarism, please flag it for moderator attention so that it can be un-deleted.
 types: answer, question
 users: user
 
