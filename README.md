@@ -24,6 +24,7 @@ Trigger a context menu on the field where you write a comment by right-clicking,
    - Only for moderators or for non-moderators
    - Only on specific sites (eg. stackoverflow.com)
    - Only for specific tags (eg. Java)
+ - Filter comments by keyword
 
 ## Variables
 
@@ -54,7 +55,6 @@ There are several features of SE-AutoReviewComments that are not implemented her
 
  - Displaying extended information about the author
  - "See-through" mode
- - Filtering comments by keyword
  - JSONP export
  - Showing the full comment text by default
  - Adding a welcome message to comments for new users
