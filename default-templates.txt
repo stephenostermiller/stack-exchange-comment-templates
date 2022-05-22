@@ -104,9 +104,14 @@ types: answer
 users: user
 
 # Deletion: Converted to comment
-I have converted this to a comment for you. Once you get 50 reputation points, you will be able to [post comments yourself](/privileges/comment).
+I converted this to a comment for you because it is not an answer. Once you [earn](//meta.stackoverflow.com/q/146472) enough [reputation](/help/whats-reputation), you will gain the privilege to [add comments](/help/privileges/comment) in addition to answers. Then you will be able to request clarification, add related links, leave constructive criticism, and address other users directly.
 types: answer
 users: moderator
+
+# Deletion: Convert to comment
+I flagged this for conversion to a comment or [deletion](/help/deleted-answers) because it is not an answer. Once you [earn](//meta.stackoverflow.com/q/146472) enough [reputation](/help/whats-reputation), you will gain the privilege to [add comments](/help/privileges/comment) in addition to answers. Then you will be able to request clarification, add related links, leave constructive criticism, and address other users directly.
+types: answer
+users: user
 
 # Deletion: Question updates
 I [deleted](/help/deleted-answers) this because it is not an answer to the question. Please modify your original question to add this additional information by clicking on the [edit link](/posts/$QUESTIONID/edit) under the question.
