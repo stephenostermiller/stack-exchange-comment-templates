@@ -183,6 +183,10 @@ types: answer, question
 If you want to recommend your own product or website, there are some [guidelines in place](/help/promotion) for doing so. Following them will help you avoid giving the impression that you're spamming. Please [edit] your post to explicitly state your affiliation. (If you're not actually affiliated, it may be worth mentioning that as well.)
 types: answer, question
 
+# Edited: Answer in question
+I rolled back your last edit because the answer doesn't belong in the question. On this site [we maintain a strict separation between questions and answers](/tour). If you've found the solution to your own problem, that's great! Please [answer your own question](/help/self-answer) in the space for an answer below.
+types: question
+
 # Comment: Question updates
 Rather than adding details in comments, please [edit] your question to add requested information. You can then comment saying that you have done so. Comments here may get hidden by "show more comments" or could be deleted without notice. Editing updates into your question ensures that they don't get lost and that everybody who wants to answer the question sees them.
 types: question
