@@ -332,7 +332,7 @@ If you want to recommend your own product or website, there are some [guidelines
 types: answer, question
 
 # Edited: Answer in question
-I rolled back your last edit because the answer doesn't belong in the question. On this site [we maintain a strict separation between questions and answers](/tour). If you've found the solution to your own problem, that's great! Please [answer your own question](/help/self-answer) in the space for an answer below.
+I rolled back your last edit because the answer doesn't belong in the question. On this site, [we maintain a strict separation between questions and answers](/tour). If you've found the solution to your own problem, that's great! Please [answer your own question](/help/self-answer) in the space for an answer below.
 types: question
 
 # Comment: Closed question updates
