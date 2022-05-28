@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.12
+// @version 1.13
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @match https://*.stackexchange.com/questions/*
 // @match https://*.stackexchange.com/review/*
@@ -170,23 +170,38 @@
 		loadComments("https://raw.githubusercontent.com/stephenostermiller/stack-exchange-comment-templates/master/default-templates.txt")
 	}
 
-	checkCommentLengths()
+	function hasCommentWarn(){
+		return checkCommentLengths().length > 0
+	}
+
+	function commentWarnHtml(){
+		var problems = checkCommentLengths()
+		if (!problems.length) return $('<span>')
+		var s = $("<ul>")
+		for (var i=0; i<problems.length; i++){
+			s.append($('<li>').text("⚠️ " + problems[i]))
+		}
+		return $('<div>').append($('<h3>').text("Problems")).append(s)
+	}
+
 	function checkCommentLengths(){
+		var problems = []
 		for (var i=0; i<comments.length; i++){
 			var c = comments[i]
 			var length = c.comment.length;
 			if (length > 600){
-				console.log("Comment template is too long (" + length + "/600): " + c.title)
+				problems.push("Comment template is too long (" + length + "/600): " + c.title)
 			} else if (length > 500 && (!c.types || c.types['flag-question'] || c.types['flag-answer'])){
-				console.log("Comment template is too long for flagging posts (" + length + "/500): " + c.title)
+				problems.push("Comment template is too long for flagging posts (" + length + "/500): " + c.title)
 			} else if (length > 300 && (!c.types || c.types['edit-question'] || c.types['edit-answer'])){
-				console.log("Comment template is too long for an edit (" + length + "/300): " + c.title)
+				problems.push("Comment template is too long for an edit (" + length + "/300): " + c.title)
 			} else if (length > 200 && (!c.types || c.types['decline-flag'] || c.types['helpful-flag'])){
-				console.log("Comment template is too long for flag handling (" + length + "/200): " + c.title)
+				problems.push("Comment template is too long for flag handling (" + length + "/200): " + c.title)
 			} else if (length > 200 && (!c.types || c.types['flag-comment'])){
-				console.log("Comment template is too long for flagging comments (" + length + "/200): " + c.title)
+				problems.push("Comment template is too long for flagging comments (" + length + "/200): " + c.title)
 			}
 		}
+		return problems
 	}
 
 	// Serialize the comment templates into local storage
@@ -296,6 +311,8 @@
 	GM_addStyle("#ctcm-menu textarea{width:90vw;min-width:300px;max-width:1000px;height:60vh;resize:both;display:block}")
 	GM_addStyle("#ctcm-menu input[type='text']{width:90vw;min-width:300px;max-width:1000px;display:block}")
 	GM_addStyle("#ctcm-menu button{margin-top:1em;margin-right:.5em}")
+	GM_addStyle("#ctcm-menu button.right{float:right}")
+	GM_addStyle("#ctcm-menu h3{margin:.5em auto;font-size: 150%;}")
 
 	// Node input: text field where content can be written.
 	// Used for filter tags to know which comment templates to show in which contexts.
@@ -361,35 +378,33 @@
 
 	// The id of the question currently being viewed
 	function getQuestionId(){
-		if (!varCache.questionid) varCache.questionid=$('.question').attr('data-questionid')
-		var l = $('.answer-hyperlink')
-		if (!varCache.questionid && l.length) varCache.questionid=l.attr('href').replace(/^\/questions\/([0-9]+).*/,"$1")
-		if (!varCache.questionid) varCache.questionid="-"
-		return varCache.questionid
+		var id = $('.question').attr('data-questionid')
+		if (!id){
+			var l = $('.answer-hyperlink')
+			if (l.length) id=l.attr('href').replace(/^\/questions\/([0-9]+).*/,"$1")
+		}
+		if (!id) id="-"
+		return id
 	}
 
 	// The human readable name of the current Stack Exchange site
 	function getSiteName(){
-		if (!varCache.sitename) varCache.sitename = $('meta[property="og:site_name"]').attr('content').replace(/ ?Stack Exchange/, "")
-		return varCache.sitename
+		return $('meta[property="og:site_name"]').attr('content').replace(/ ?Stack Exchange/, "")
 	}
 
 	// The Stack Exchange user id for the person using this tool
 	function getMyUserId() {
-		if (!varCache.myUserId) varCache.myUserId = $('a.s-topbar--item.s-user-card').attr('href').replace(/^\/users\/([0-9]+)\/.*/,"$1")
-		return varCache.myUserId
+		return $('a.s-topbar--item.s-user-card').attr('href').replace(/^\/users\/([0-9]+)\/.*/,"$1")
 	}
 
-    // The Stack Exchange user name for the person using this tool
+	// The Stack Exchange user name for the person using this tool
 	function getMyName() {
-		if (!varCache.myName) varCache.myName = $('.s-avatar').attr('title').replace(/ /g,"")
-		return varCache.myName
+		return $('.s-avatar').attr('title').replace(/ /g,"")
 	}
 
 	// The full host name of the Stack Exchange site
 	function getSiteUrl(){
-		if (!varCache.siteurl) varCache.siteurl = location.hostname
-		return varCache.siteurl
+		return location.hostname
 	}
 
 	// Store the comment text field that was clicked on
@@ -469,21 +484,30 @@
 			"tags: javascript, python, etc\n"+
 			"socvr: Message for Stack Overflow close vote reviews chat</pre>"+
 			"<p>types, users, sites, tags, and socvr are optional.</p>"
-	   )
-		ctcmi.append($('<textarea>').val(exportComments()))
-		ctcmi.append($('<button>Save</Button>').click(doneEditing))
-		ctcmi.append($('<button>Cancel</Button>').click(closeMenu))
-		ctcmi.append($('<button>From URL...</Button>').click(urlConf))
+		)
+		.append($('<textarea>').val(exportComments()))
+		.append($('<button>Save</button>').click(doneEditing))
+		.append($('<button>Cancel</button>').click(closeMenu))
+		.append($('<button>From URL...</button>').click(urlConf))
 		return false
 	}
 
+	// Show info
+	function showInfo(){
+		ctcmi.html(
+			"<div><h2><a target=_blank href=//github.com/stephenostermiller/stack-exchange-comment-templates>Stack Exchange Comment Templates Context Menu</a></h2></div>"
+		)
+		.append(commentWarnHtml())
+		.append(htmlVars())
+		.append($('<button>Cancel</button>').click(closeMenu))
+		return false
+	}
 	function getAuthorNode(postNode){
 		return postNode.find('.post-signature .user-details[itemprop="author"]')
 	}
 
 	function getOpNode(){
-		if (!varCache.opNode) varCache.opNode = getAuthorNode($('#question,.question'))
-		return varCache.opNode
+		return getAuthorNode($('#question,.question'))
 	}
 
 	function getUserNodeId(node){
@@ -496,8 +520,7 @@
 	}
 
 	function getOpId(){
-		if (!varCache.opId) varCache.opId = getUserNodeId(getOpNode())
-		return varCache.opId
+		return getUserNodeId(getOpNode())
 	}
 
 	function getUserNodeName(node){
@@ -509,8 +532,7 @@
 	}
 
 	function getOpName(){
-		if (!varCache.opName) varCache.opName = getUserNodeName(getOpNode())
-		return varCache.opName
+		return getUserNodeName(getOpNode())
 	}
 
 	function getUserNodeRep(node){
@@ -521,33 +543,27 @@
 	}
 
 	function getOpRep(){
-		if (!varCache.opRep) varCache.opRep = getUserNodeRep(getOpNode())
-		return varCache.opRep
+		return getUserNodeRep(getOpNode())
 	}
 
 	function getPostNode(){
-		if (!varCache.postNode) varCache.postNode = commentTextField.parents('#question,.question,.answer')
-		return varCache.postNode
+		return commentTextField.parents('#question,.question,.answer')
 	}
 
 	function getPostAuthorNode(){
-		if (!varCache.postAuthorNode) varCache.postAuthorNode = getAuthorNode(getPostNode())
-		return varCache.postAuthorNode
+		return getAuthorNode(getPostNode())
 	}
 
 	function getAuthorId(){
-		if (!varCache.authorId) varCache.authorId = getUserNodeId(getPostAuthorNode())
-		return varCache.authorId
+		return getUserNodeId(getPostAuthorNode())
 	}
 
 	function getAuthorName(){
-		if (!varCache.authorName) varCache.authorName = getUserNodeName(getPostAuthorNode())
-		return varCache.authorName
+		return getUserNodeName(getPostAuthorNode())
 	}
 
 	function getAuthorRep(){
-		if (!varCache.authorRep) varCache.authorRep = getUserNodeRep(getPostAuthorNode())
-		return varCache.authorRep
+		return getUserNodeRep(getPostAuthorNode())
 	}
 
 	function getPostId(){
@@ -574,11 +590,33 @@
 		'AUTHORREP': getAuthorRep
 	}
 
-	function logVars(){
+	// Cache variables so they don't have to be looked up for every single question
+	var varCache={}
+
+	function getCachedVar(key){
+		if (!varCache[key]) varCache[key] = varMap[key]()
+		return varCache[key]
+	}
+
+	function hasVarWarn(){
 		var varnames = Object.keys(varMap)
 		for (var i=0; i<varnames.length; i++){
-			console.log(varnames[i] + ": " + varMap[varnames[i]]())
+			if (getCachedVar(varnames[i]).match(/^-?$/)) return true
 		}
+		return false
+	}
+
+	function htmlVars(){
+		var n = $("<ul>")
+		var varnames = Object.keys(varMap)
+		for (var i=0; i<varnames.length; i++){
+			var li=$("<li>")
+			var val = getCachedVar(varnames[i])
+			if (val.match(/^-?$/)) li.append($("<span>").text("⚠️ "))
+			li.append($("<b>").text(varnames[i])).append($("<span>").text(": ")).append($("<span>").text(val))
+			n.append(li)
+		}
+		return $('<div>').append($('<h3>').text("Variables")).append(n)
 	}
 
 	// Build regex to find variables from keys of map
@@ -586,8 +624,8 @@
 	function fillVariables(s){
 		// Perform the variable replacement
 		return s.replace(varRegex, function (m) {
-			// Remove $ before looking up in map
-			return varMap[m.replace(/\$/g,"")]()
+			// Remove $ from variable name
+			return getCachedVar(m.replace(/\$/g,""))
 		});
 	}
 
@@ -600,8 +638,8 @@
 		if (url) ctcmi.append("<p>Remove all the URLs to be able to edit the comments in your browser.</p>")
 		else ctcmi.append("<p>Using a URL will <b>overwrite</b> any edits to the comments you have made.</p>")
 		ctcmi.append($('<textarea placeholder=https://raw.githubusercontent.com/user/repo/123/stack-exchange-comments.txt>').val(url))
-		ctcmi.append($('<button>Save</Button>').click(doneUrlConf))
-		ctcmi.append($('<button>Cancel</Button>').click(closeMenu))
+		ctcmi.append($('<button>Save</button>').click(doneUrlConf))
+		ctcmi.append($('<button>Cancel</button>').click(closeMenu))
 		return false
 	}
 
@@ -695,7 +733,6 @@
 		} else if (target.is('textarea,input[type="text"]') && (!target.val() || target.val() == target[0].defaultValue)){
 			// A text field that is blank or hasn't been modified
 			var type = getType(target)
-			//console.log("Type: " + type)
 			if (type){
 				// A text field for entering a comment
 				showMenu(target)
@@ -748,7 +785,6 @@
 		})
 	}
 
-	var varCache={} // Cache variables so they don't have to be looked up for every single question
 	function showMenu(target){
 		varCache={} // Clear the variable cache
 		commentTextField=target
@@ -759,7 +795,6 @@
 		ctcmi.html("")
 		var filter=$('<input type=text placeholder="filter... (type then press enter to insert the first comment)">').keyup(filterComments).change(filterComments)
 		ctcmi.append(filter)
-		//logVars()
 		for (var i=0; i<comments.length; i++){
 			if(commentMatches(comments[i], type, user, site, tags)){
 				ctcmi.append(
@@ -773,8 +808,10 @@
 				)
 			}
 		}
-		ctcmi.append($('<button>Edit</Button>').click(editComments))
-		ctcmi.append($('<button>Cancel</Button>').click(closeMenu))
+		var info = (hasVarWarn()||hasCommentWarn())?"⚠️":"ⓘ"
+		ctcmi.append($('<button>Edit</button>').click(editComments))
+		ctcmi.append($('<button>Cancel</button>').click(closeMenu))
+		ctcmi.append($('<button class=right>').text(info).click(showInfo))
 		target.parents('.popup,#modal-base,body').first().append(ctcmo)
 		ctcmo.show()
 		filter.focus()
@@ -788,12 +825,12 @@
 	// Hook into clicks anywhere in the document
 	// and listen for ones that related to our dialog
 	$(document).click(function(e){
+		// dialog is open
 		if(ctcmo.is(':visible')){
-			// dialog is open
-			if($(e.target).parents('#ctcm-back').length == 0) {
-				// click wasn't on the dialog itself
-				closeMenu()
-			}
+			// Allow clicks on links in the dialog to have default behavior
+			if($(e.target).is('a')) return true
+			// click wasn't on the dialog itself
+			if(!$(e.target).parents('#ctcm-back').length) closeMenu()
 			// Clicks when the dialog are open belong to us,
 			// prevent other things from happening
 			e.preventDefault()

@@ -25,6 +25,7 @@ Trigger a context menu on the field where you write a comment by right-clicking,
    - Only on specific sites (eg. stackoverflow.com)
    - Only for specific tags (eg. Java)
  - Filter comments by keyword
+ - Warnings about comment templates that are too long
 
 ## Variables
 
