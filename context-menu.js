@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.11
+// @version 1.12
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @match https://*.stackexchange.com/questions/*
 // @match https://*.stackexchange.com/review/*
@@ -39,7 +39,7 @@
 	}
 
 	function validateTag(s){
-		return s.toLowerCase().trim().replace(/ +/,"-")
+		return s.toLowerCase().trim().replace(/ +/g,"-")
 	}
 
 	// eg hello-world, hello-worlds, hello world, hello worlds, and hw all map to hello-world
@@ -380,6 +380,12 @@
 		return varCache.myUserId
 	}
 
+    // The Stack Exchange user name for the person using this tool
+	function getMyName() {
+		if (!varCache.myName) varCache.myName = $('.s-avatar').attr('title').replace(/ /g,"")
+		return varCache.myName
+	}
+
 	// The full host name of the Stack Exchange site
 	function getSiteUrl(){
 		if (!varCache.siteurl) varCache.siteurl = location.hostname
@@ -499,7 +505,7 @@
 		var link = node.find('a')
 		if (!link.length) return "-"
 		// Remove spaces from user names so that they can be used in @name references
-		return link.text().replace(/ /,"")
+		return link.text().replace(/ /g,"")
 	}
 
 	function getOpName(){
@@ -557,6 +563,7 @@
 		'SITENAME': getSiteName,
 		'SITEURL': getSiteUrl,
 		'MYUSERID': getMyUserId,
+		'MYNAME': getMyName,
 		'QUESTIONID': getQuestionId,
 		'OPID': getOpId,
 		'OPNAME': getOpName,

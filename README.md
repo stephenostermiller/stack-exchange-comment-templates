@@ -33,6 +33,7 @@ The following variables are expanded by this code within comments:
  - `$SITENAME`: The name of the current Stack Exchange site, eg "Stack Overflow"
  - `$SITEURL`: The domain name of the current Stack Exchange site, eg `stackoverflow.com`. You usually don't need this variable, you can use links like `[editing help](/editing-help)` to link to URLs found on every StackExchange site.
  - `$MYUSERID`: Your user id
+ - `$MYNAME`: Your user name (without spaces for @references)
  - `$QUESTIONID`: The ID of the question at the top of the page
  - `$OPID`: The user ID of the person who asked the question
  - `$OPNAME`: The user name of the person who asked the question (without spaces for @references)
