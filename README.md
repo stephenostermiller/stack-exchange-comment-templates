@@ -59,4 +59,4 @@ There are several features of SE-AutoReviewComments that are not implemented her
  - JSONP export
  - Showing the full comment text by default
  - Adding a welcome message to comments for new users
- - No direct extensions for Firefox or Chrome
+ - Direct extensions for Firefox or Chrome
