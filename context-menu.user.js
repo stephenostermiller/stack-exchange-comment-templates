@@ -313,12 +313,12 @@
 	// outer translucent lightbox background that covers the whole page
 	var ctcmo = $('<div id=ctcm-back>').append(ctcmi)
 	GM_addStyle("#ctcm-back{z-index:999998;display:none;position:fixed;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,.5)}")
-	GM_addStyle("#ctcm-menu{z-index:999999;min-width:320px;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--white);border:5px solid var(--theme-header-foreground-color);padding:1em;max-width:100vw;max-height:100vh;overflow:auto}")
+	GM_addStyle("#ctcm-menu{z-index:999999;min-width:320px;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--white);border:5px solid var(--theme-header-foreground-color);padding:1em;max-width:100%;max-height:100%;overflow:auto}")
 	GM_addStyle(".ctcm-body{display:none;background:var(--black-050);padding:.3em;cursor: pointer;")
 	GM_addStyle(".ctcm-expand{float:right;cursor: pointer;}")
 	GM_addStyle(".ctcm-title{margin-top:.3em;cursor: pointer;}")
-	GM_addStyle("#ctcm-menu textarea{width:90vw;min-width:300px;max-width:1000px;height:60vh;resize:both;display:block}")
-	GM_addStyle("#ctcm-menu input[type='text']{width:90vw;min-width:300px;max-width:1000px;display:block}")
+	GM_addStyle("#ctcm-menu textarea{width:90%;min-width:300px;max-width:1000px;height:60vh;resize:both;display:block}")
+	GM_addStyle("#ctcm-menu input[type='text']{width:90%;min-width:300px;max-width:1000px;display:block}")
 	GM_addStyle("#ctcm-menu button{margin-top:1em;margin-right:.5em}")
 	GM_addStyle("#ctcm-menu button.right{float:right}")
 	GM_addStyle("#ctcm-menu h3{margin:.5em auto;font-size: 150%;}")
@@ -413,7 +413,6 @@
 		return n.replace(/ /g,"")
 	}
 
-
 	// The full host name of the Stack Exchange site
 	function getSiteUrl(){
 		return location.hostname
@@ -426,7 +425,12 @@
 	// Insert the comment template into the text field
 	// called when a template is clicked in the dialog box
 	// so "this" refers to the clicked item
-	function insertComment(){
+	function insertComment(event){
+		if (event) {
+			event.stopImmediatePropagation()
+			event.preventDefault()
+			event.stopPropagation()
+		}
 		// The comment to insert is stored in a div
 		// near the item that was clicked
 		var body = $(this).parent().children('.ctcm-body')
@@ -449,6 +453,7 @@
 		if (typeHereInd >= 0) commentTextField[0].setSelectionRange(typeHereInd, typeHereInd + typeHere.length)
 
 		closeMenu()
+		return false
 	}
 
 	// User clicked on the expand icon in the dialog
@@ -693,10 +698,10 @@
 			// Suggested edit review queue - reject
 			target.trigger('click')
 			$('button.js-review-submit').trigger('click')
-			doStepsWait([
+			awaitSteps([
 				// Click "causes harm"
 				{target:()=>$('#rejection-reason-0'), action:target=>target.trigger('click')},
-				{target:()=>$('#rejection-reason-0').parents('.flex--item').find('textarea'), action:target=>showMenu(target)}
+				{target:prev=>prev.parents('.flex--item').find('textarea'), action:target=>showMenu(target)}
 			])
 			e.preventDefault()
 			return false
@@ -717,10 +722,10 @@
 		} else if (target.closest('.js-comment-flag').length){
 			// The flag icon next to a comment
 			target.trigger('click')
-			doStepsWait([
+			awaitSteps([
 				// Click "Something else"
 				{target:()=>$('#comment-flag-type-CommentOther').prop('checked',true).parents('.js-comment-flag-option').find('.js-required-comment'), action:target=>target.removeClass('d-none')},
-				{target:()=>$('#comment-flag-type-CommentOther').parents('.js-comment-flag-option').find('textarea'), action:target=>showMenu(target)}
+				{target:prev=>prev.parents('.js-comment-flag-option').find('textarea'), action:target=>showMenu(target)}
 			])
 			e.preventDefault()
 			return false
@@ -755,29 +760,31 @@
 		return new Promise(resolve => setTimeout(resolve, msec));
 	}
 
-	async function doStepsWait(steps){
+	async function awaitSteps(steps){
+		var prev
 		for (var i=0; i<steps.length; i++){
-			var target
+			var target = null
 			do {
 				await sleep(50);
-				target = steps[i].target()
+				target = steps[i].target(prev)
 			} while (target.length==0)
+			prev=target
 			steps[i].action(target)
 		}
 	}
 
 	async function showMenuInFlagDialog(){
-		doStepsWait([
+		awaitSteps([
 			{target:()=>$('input[value="PostOther"]'), action:target=>target.trigger('click')},
-			{target:()=>$('input[value="PostOther"]').parents('label').find('textarea'), action:target=>showMenu(target)}
+			{target:prev=>prev.parents('label').find('textarea'), action:target=>showMenu(target)}
 		])
 	}
 
 	async function showMenuInCloseDialog(){
-		doStepsWait([
+		awaitSteps([
 			{target:()=>$('#closeReasonId-SiteSpecific'), action:target=>target.trigger('click')},
 			{target:()=>$('#siteSpecificCloseReasonId-other'), action:target=>target.trigger('click')},
-			{target:()=>$('#siteSpecificCloseReasonId-other').parents('.js-popup-radio-action').find('textarea'), action:target=>showMenu(target)}
+			{target:prev=>prev.parents('.js-popup-radio-action').find('textarea'), action:target=>showMenu(target)}
 		])
 	}
 	function filterComments(e){
@@ -828,7 +835,7 @@
 		ctcmi.append($('<button>Edit</button>').click(editComments))
 		ctcmi.append($('<button>Cancel</button>').click(closeMenu))
 		ctcmi.append($('<button class=right>').text(info).click(showInfo))
-		target.parents('.popup,#modal-base,body').first().append(ctcmo)
+		target.parents('.popup,#modal-base,.js-modal-dialog,.modal-description,body').first().append(ctcmo)
 		ctcmo.show()
 		filter.focus()
 	}
