@@ -676,7 +676,7 @@
 	// Hook into clicks for the entire page that should show a context menu
 	// Only handle the clicks on comment input areas (don't prevent
 	// the context menu from appearing in other places.)
-	$(document).contextmenu(function(e){
+	$(document).contextmenu(async function(e){
 		var target = $(e.target)
 		if (target.is('.comments-link')){
 			// The "Add a comment" link
@@ -752,26 +752,43 @@
 		}
 	})
 
-	function showMenuInFlagDialog(){
-		// Wait for the popup
-		setTimeout(function(){
-			$('input[value="PostOther"]').trigger('click')
-		},100)
-		setTimeout(function(){
-			showMenu($('input[value="PostOther"]').parents('label').find('textarea'))
-		},200)
+    // https://stackoverflow.com/a/47092642
+    async function sleep(msec) {
+        return new Promise(resolve => setTimeout(resolve, msec));
+    }
+
+
+	async function showMenuInFlagDialog(){
+        var target
+        do {
+            await sleep(50);
+            target = $('input[value="PostOther"]')
+        } while (target.length==0)
+		target.trigger('click')
+        do {
+            await sleep(50);
+            target = $('input[value="PostOther"]').parents('label').find('textarea')
+        } while (target.length==0)
+        showMenu(target)
 	}
 
-	function showMenuInCloseDialog(){
-		setTimeout(function(){
-			$('#closeReasonId-SiteSpecific').trigger('click')
-		},100)
-		setTimeout(function(){
-			$('#siteSpecificCloseReasonId-other').trigger('click')
-		},200)
-		setTimeout(function(){
-			showMenu($('#siteSpecificCloseReasonId-other').parents('.js-popup-radio-action').find('textarea'))
-		},300)
+	async function showMenuInCloseDialog(){
+        var target
+        do {
+            await sleep(50);
+            target = $('#closeReasonId-SiteSpecific')
+        } while (target.length==0)
+		target.trigger('click')
+        do {
+            await sleep(50);
+            target = $('#siteSpecificCloseReasonId-other')
+        } while (target.length==0)
+		target.trigger('click')
+        do {
+            await sleep(50);
+            target = $('#siteSpecificCloseReasonId-other').parents('.js-popup-radio-action').find('textarea')
+        } while (target.length==0)
+        showMenu(target)
 	}
 
 	function filterComments(e){
