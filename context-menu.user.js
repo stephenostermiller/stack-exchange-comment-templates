@@ -1,8 +1,10 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
-// @namespace http://ostermiller.org/
-// @version 1.15
+// @version 1.15.0
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
+// @namespace https://github.com/stephenostermiller/stack-exchange-comment-templates
+// @updateURL https://github.com/stephenostermiller/stack-exchange-comment-templates/raw/master/context-menu.meta.js
+// @downloadURL https://github.com/stephenostermiller/stack-exchange-comment-templates/raw/master/context-menu.user.js
 // @match https://*.stackexchange.com/questions/*
 // @match https://*.stackexchange.com/review/*
 // @match https://*.stackexchange.com/admin/*
@@ -359,14 +361,14 @@
 	// and are unlikely to use this tool, no need to identify them
 	// and give them special behavior.
 	// Maybe add a class for staff in the future?
-	var userclass
+	var userClass
 	function getUserClass(){
-		if (!userclass){
-			if ($('.js-mod-inbox-button').length) userclass="moderator"
-			else if ($('.s-topbar--item.s-user-card').length) userclass="user"
-			else userclass="anonymous"
+		if (!userClass){
+			if ($('.js-mod-inbox-button').length) userClass="moderator"
+			else if ($('.s-topbar--item.s-user-card').length) userClass="user"
+			else userClass="anonymous"
 		}
-		return userclass
+		return userClass
 	}
 
 	// The Stack Exchange site this is run on (just the subdomain, eg "stackoverflow")
@@ -691,13 +693,11 @@
 			// Suggested edit review queue - reject
 			target.trigger('click')
 			$('button.js-review-submit').trigger('click')
-			setTimeout(function(){
+			doStepsWait([
 				// Click "causes harm"
-				$('#rejection-reason-0').trigger('click')
-			},100)
-			setTimeout(function(){
-				showMenu($('#rejection-reason-0').parents('.flex--item').find('textarea'))
-			},200)
+				{target:()=>$('#rejection-reason-0'), action:target=>target.trigger('click')},
+				{target:()=>$('#rejection-reason-0').parents('.flex--item').find('textarea'), action:target=>showMenu(target)}
+			])
 			e.preventDefault()
 			return false
 		} else if (target.closest('#review-action-Unsalvageable,label[for="review-action-Unsalvageable"]').length){
@@ -717,13 +717,11 @@
 		} else if (target.closest('.js-comment-flag').length){
 			// The flag icon next to a comment
 			target.trigger('click')
-			setTimeout(function(){
+			doStepsWait([
 				// Click "Something else"
-				$('#comment-flag-type-CommentOther').prop('checked',true).parents('.js-comment-flag-option').find('.js-required-comment').removeClass('d-none')
-			},100)
-			setTimeout(function(){
-				showMenu($('#comment-flag-type-CommentOther').parents('.js-comment-flag-option').find('textarea'))
-			},200)
+				{target:()=>$('#comment-flag-type-CommentOther').prop('checked',true).parents('.js-comment-flag-option').find('.js-required-comment'), action:target=>target.removeClass('d-none')},
+				{target:()=>$('#comment-flag-type-CommentOther').parents('.js-comment-flag-option').find('textarea'), action:target=>showMenu(target)}
+			])
 			e.preventDefault()
 			return false
 		} else if (target.closest('#review-action-Close,label[for="review-action-Close"],#review-action-NeedsAuthorEdit,label[for="review-action-NeedsAuthorEdit"]').length){
@@ -752,45 +750,36 @@
 		}
 	})
 
-    // https://stackoverflow.com/a/47092642
-    async function sleep(msec) {
-        return new Promise(resolve => setTimeout(resolve, msec));
-    }
+	// https://stackoverflow.com/a/47092642
+	async function sleep(msec) {
+		return new Promise(resolve => setTimeout(resolve, msec));
+	}
 
+	async function doStepsWait(steps){
+		for (var i=0; i<steps.length; i++){
+			var target
+			do {
+				await sleep(50);
+				target = steps[i].target()
+			} while (target.length==0)
+			steps[i].action(target)
+		}
+	}
 
 	async function showMenuInFlagDialog(){
-        var target
-        do {
-            await sleep(50);
-            target = $('input[value="PostOther"]')
-        } while (target.length==0)
-		target.trigger('click')
-        do {
-            await sleep(50);
-            target = $('input[value="PostOther"]').parents('label').find('textarea')
-        } while (target.length==0)
-        showMenu(target)
+		doStepsWait([
+			{target:()=>$('input[value="PostOther"]'), action:target=>target.trigger('click')},
+			{target:()=>$('input[value="PostOther"]').parents('label').find('textarea'), action:target=>showMenu(target)}
+		])
 	}
 
 	async function showMenuInCloseDialog(){
-        var target
-        do {
-            await sleep(50);
-            target = $('#closeReasonId-SiteSpecific')
-        } while (target.length==0)
-		target.trigger('click')
-        do {
-            await sleep(50);
-            target = $('#siteSpecificCloseReasonId-other')
-        } while (target.length==0)
-		target.trigger('click')
-        do {
-            await sleep(50);
-            target = $('#siteSpecificCloseReasonId-other').parents('.js-popup-radio-action').find('textarea')
-        } while (target.length==0)
-        showMenu(target)
+		doStepsWait([
+			{target:()=>$('#closeReasonId-SiteSpecific'), action:target=>target.trigger('click')},
+			{target:()=>$('#siteSpecificCloseReasonId-other'), action:target=>target.trigger('click')},
+			{target:()=>$('#siteSpecificCloseReasonId-other').parents('.js-popup-radio-action').find('textarea'), action:target=>showMenu(target)}
+		])
 	}
-
 	function filterComments(e){
 		if (e.key === "Enter") {
 			// Pressing enter in the comment filter
