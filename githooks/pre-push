@@ -2,7 +2,7 @@
 
 if git branch | grep -q -E ' master$'
 then
-	if [ "z`git diff origin HEAD editor.user.js`" != "z" ]
+	if [ "z`git diff origin HEAD context-menu.user.js`" != "z" ]
 	then
 		# editor.user.js has been updated
 		if [ "z`git diff origin HEAD version`" == "z" ]
