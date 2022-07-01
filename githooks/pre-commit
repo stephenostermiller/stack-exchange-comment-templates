@@ -51,8 +51,16 @@ then
 			# All lines start with tabs not spaces in indented code files
 			echo "$tab_files" | xargs tabfix -t -w 4
 		fi
+
+		txt_files=`echo "$text_files" | grep -E '\.(txt|text)$'` || true
+		if [ "z$txt_files" != "z" ]
+		then
+			# Remove double spaces
+			echo "$txt_files" | xargs sed -E -i 's/  +/ /g'
+		fi
 	fi
 fi
+echo "$commit_files" | xargs git add
 
 # Check for white space errors
 git diff-index --check --cached $against --
