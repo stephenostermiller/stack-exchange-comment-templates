@@ -118,7 +118,7 @@ users: user
 socvr: More than one question
 
 # Closure: Big list
-I voted to close this post because it asks for a big list of items. Such questions tend to produce competing answers which lead to disagreements ond voting wars. Questions here are expected to be able to choose a single accepted answer instead of being open-ended or polling.
+I voted to close this post because it asks for a big list of items. Such questions tend to produce competing answers which lead to disagreements and voting wars. Questions here are expected to be able to choose a single accepted answer instead of being open-ended or polling.
 types: close-question, question
 users: user
 socvr: More than one question
