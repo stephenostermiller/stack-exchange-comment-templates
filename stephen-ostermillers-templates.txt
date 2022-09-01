@@ -380,6 +380,11 @@ You don't need to find some structured data to apply for SEO. Unless there is re
 types: question
 sites: webmasters
 
+# Wrong close reason, not needs focus
+The close reason here is slightly misleading; your question does not contain multiple questions. I think the correct close reason should be "needs details or clarity". Please review the [help] and in particular [How to ask](/help/how-to-ask). Perhaps you can still edit this into a form which is acceptable on Stack Overflow.
+types: question
+sites: stackoverflow
+
 # Question asked again after closure
 In the future, please edit a closed question rather than asking it again. It is not appropriate to ask your question a second time. Instead you need to edit your original question so that it can be reopened. When you edit a closed question it automatically enters a review queue for review to be reopened.
 types: question
