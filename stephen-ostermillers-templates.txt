@@ -95,7 +95,7 @@ types: close-question, question
 socvr: Too much code
 
 # Closure: External code
-I voted to close this question because the sample code is linked externally. Please [edit] this question to include your code directly in your question. Code linked externally may not be permanently available, and may not be licensed such that it can be used in answers. 
+I voted to close this question because the code with the problem is linked externally. Please [edit] this question to include the [minimal code that exhibits the issue](/help/minimal-reproducible-example) directly in your question. [Code linked externally may not be permanently available, and may not be licensed such that it can be used in answers](//meta.stackoverflow.com/questions/254428/). 
 types: close-question, question
 socvr: External code
 
