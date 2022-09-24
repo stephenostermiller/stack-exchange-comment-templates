@@ -129,13 +129,13 @@ types: close-question, question
 users: moderators
 
 # Closure: Getting started or approach
-I voted to close this question because there are usually hundreds of ways to implement a feature; too many to enumerate here. Furthermore, a full answer to any one of them could require many pages or even a full book. Rather than asking for an approach, [edit] your question to focus on a more specific problem you encounter after you have chosen a method and attempted to implement it.
+I voted to close this question because there could be hundreds of ways to implement this; too many to enumerate here. Furthermore, a full answer to any one of them could require many pages or even a full book. Rather than asking for an approach, [edit] your question to focus on a more specific problem you encounter after you have chosen a method and attempted to implement it.
 types: close-question, question
 users: user
 socvr: Needs focus
 
 # Closure: Getting started or approach
-I closed this question because there are usually hundreds of ways to implement a feature; too many to enumerate here. Furthermore, a full answer to any one of them could require many pages or even a full book. Rather than asking for an approach, [edit] your question to focus on a more specific problem you encounter after you have chosen a method and attempted to implement it.
+I closed this question because there could be hundreds of ways to implement this; too many to enumerate here. Furthermore, a full answer to any one of them could require many pages or even a full book. Rather than asking for an approach, [edit] your question to focus on a more specific problem you encounter after you have chosen a method and attempted to implement it.
 types: close-question, question
 users: moderators
 socvr: Needs focus
