@@ -63,6 +63,64 @@ types: close-question, question
 Please [edit] to paste the text used in the image into your question so that it can be read on all devices, quoted, edited, and found through search. As it stands now, [your image makes it hard to answer your question or for people with related issues to find your question](//meta.stackoverflow.com/questions/285551/why-not-upload-images-of-code-errors-when-asking-a-question). See the [formatting documentation](/editing-help) for tips to make your text appear nicely without resorting to images.
 types: close-question, question
 
+# Closure: In Japanese
+I voted to close this question because it is not written in English. If you wish to ask questions in Japanese, please ask on [スタック・オーバーフロー日本語版](//ja.stackoverflow.com/). Otherwise, please [edit] your question to ask in English. Consider whether Google Translate could help.
+types: close-question, question
+sites: stackoverflow
+users: user
+
+# Closure: In Japanese
+I closed this question because it is not written in English. If you wish to ask questions in Japanese, please ask on [スタック・オーバーフロー日本語版](//ja.stackoverflow.com/). Otherwise, please [edit] your question to ask in English. Consider whether Google Translate could help.
+types: close-question, question
+sites: stackoverflow
+users: moderator
+
+# Closure: In Russian
+I voted to close this question because it is not written in English. If you wish to ask questions in Russian, please ask on [Stack Overflow на русском](//ru.stackoverflow.com/). Otherwise, please [edit] your question to ask in English. Consider whether Google Translate could help.
+types: close-question, question
+sites: stackoverflow
+users: user
+
+# Closure: In Russian
+I closed this question because it is not written in English. If you wish to ask questions in Russian, please ask on [Stack Overflow на русском](//ru.stackoverflow.com/). Otherwise, please [edit] your question to ask in English. Consider whether Google Translate could help.
+types: close-question, question
+sites: stackoverflow
+users: moderator
+
+# Closure: In Spanish
+I voted to close this question because it is not written in English. If you wish to ask questions in Spanish, please ask on [Stack Overflow en español](//es.stackoverflow.com/). Otherwise, please [edit] your question to ask in English. Consider whether Google Translate could help.
+types: close-question, question
+sites: stackoverflow
+users: user
+
+# Closure: In Spanish
+I closed this question because it is not written in English. If you wish to ask questions in Spanish, please ask on [Stack Overflow en español](//es.stackoverflow.com/). Otherwise, please [edit] your question to ask in English. Consider whether Google Translate could help.
+types: close-question, question
+sites: stackoverflow
+users: moderator
+
+# Closure: In Portuguese
+I voted to close this question because it is not written in English. If you wish to ask questions in Portuguese, please ask on [Stack Overflow em Português](//pt.stackoverflow.com/). Otherwise, please [edit] your question to ask in English. Consider whether Google Translate could help.
+types: close-question, question
+sites: stackoverflow
+users: user
+
+# Closure: In Portuguese
+I closed this question because it is not written in English. If you wish to ask questions in Portuguese, please ask on [Stack Overflow em Português](//pt.stackoverflow.com/). Otherwise, please [edit] your question to ask in English. Consider whether Google Translate could help.
+types: close-question, question
+sites: stackoverflow
+users: moderator
+
+# Closure: Not in English
+I voted to close this question because it is not written in English. Please [edit] it to ask in English. Consider whether Google Translate could help.
+types: close-question, question
+users: user
+
+# Closure: Not in English
+I closed this question because it is not written in English. Please [edit] it to ask in English. Consider whether Google Translate could help.
+types: close-question, question
+users: moderator
+
 # Deletion: New question
 I [deleted](/help/deleted-answers) this because it asks a question rather than provides an answer. To get an answer to your question, start by [searching for similar questions](/search) or referring to the related questions linked on this page. If your question hasn't already been asked, please use the [ask question](/questions/ask) form. If needed, you can include a link to this question to help provide context.
 types: answer
