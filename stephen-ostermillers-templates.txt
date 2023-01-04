@@ -12,44 +12,44 @@ sites: webmasters
 I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
 types: close-question, question
-tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserver
+tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, shopify, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserver
 socvr: Not programming, ask on Webmasters
 
 # Closure: Webmasters needs clarity
 This is not a programming question and it is off-topic on Stack Overflow. Please [edit] the question to address the points that need to be clarified, then re-ask it on [webmasters.se] and delete it here.
 sites: stackoverflow
 types: close-question, question
-tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserversocvr: Not programming, clarify then ask on Webmasters
+tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, shopify, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserversocvr: Not programming, clarify then ask on Webmasters
 
 # Closure: Webmasters site specific
 I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. However, as it is currently worded, this question would be closed as off-topic on Webmasters because it is specific to your site. When you delete it here and ask it there, please include enough details that it isn't just "what is wrong with my site?" Ideally, you wouldn't need to link to your site at all.
 sites: stackoverflow
 types: close-question, question
-tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserversocvr: Not programming, remove link then ask on Webmasters
+tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, shopify, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserversocvr: Not programming, remove link then ask on Webmasters
 
 # Closure: Webmasters duplicate
 I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. In this case the question has already been asked and answered there: [type here]
 sites: stackoverflow
 types: close-question, question
-tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserversocvr: Not programming, already answered on Webmasters
+tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, shopify, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserversocvr: Not programming, already answered on Webmasters
 
 # Closure: Webmasters recommendation
 I voted to close this question because it asks for recommendations of external websites, tools, resources, or software. It is also not a programming question so it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se]. If you can remove the request for recommendations, please delete your question here and re-ask it there.
 sites: stackoverflow
 types: close-question, question
-tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserver
+tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, shopify, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserver
 
 # Closure: Webmasters flagged
 I flagged this question to be moved to [webmasters.se] because it is not a programming question that is on-topic here. Because this question already has an answer, please wait for it be moved rather than re-asking it there.
 sites: stackoverflow
 types: close-question, question
-tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserver
+tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, shopify, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserver
 
 # Closure: Move to Webmasters
 Please move this question and its answers to webmasters. I'm a moderator on webmasters. This question would be on-topic there.
 sites: stackoverflow
 types: flag-question
-tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserver
+tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, shopify, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserver
 
 # Closure: WordPress or Webmasters
 I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se] and questions about WordPress development and administration should be asked on [wordpress.se]. Please delete your question here and re-ask it in one of those more appropriate places.
