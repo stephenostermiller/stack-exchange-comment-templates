@@ -161,12 +161,12 @@ I flagged this for [deletion](/help/deleted-answers) because it is not an answer
 types: answer
 users: user
 
-# Deletion: Converted to comment
+# Deletion: Commentary
 I converted this to a comment for you because it is not an answer. Once you [earn](//meta.stackoverflow.com/q/146472) enough [reputation](/help/whats-reputation), you will gain the privilege to [add comments](/help/privileges/comment) in addition to answers. Then you will be able to request clarification, add related links, leave constructive criticism, and address other users directly.
 types: answer
 users: moderator
 
-# Deletion: Convert to comment
+# Deletion: Commentary
 I flagged this for conversion to a comment or [deletion](/help/deleted-answers) because it is not an answer. Once you [earn](//meta.stackoverflow.com/q/146472) enough [reputation](/help/whats-reputation), you will gain the privilege to [add comments](/help/privileges/comment) in addition to answers. Then you will be able to request clarification, add related links, leave constructive criticism, and address other users directly.
 types: answer
 users: user
