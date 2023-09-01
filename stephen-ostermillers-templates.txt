@@ -52,28 +52,28 @@ types: flag-question
 tags: apache, canonical-link, canonicalization, cdn, dns, google-analytics, google-crawlers, google-rich-snippets, google-search, google-search-console, google-sites, googlebot, hosting, .htaccess, http, http-redirect, https, indexing, minify, mod-rewrite, noindex, redirect, robots.txt, search-engine, search-engine-bots, seo, server, shopify, sitemap, url, url-rewriting, web, web-hosting, web-site-project, webserver
 
 # Closure: WordPress or Webmasters
-I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website should be asked on [webmasters.se] and questions about WordPress development and administration should be asked on [wordpress.se]. Please delete your question here and re-ask it in one of those more appropriate places.
+I voted to close this question because it is not a programming question and it is off-topic on Stack Overflow. Non-programming questions about your website can be asked on [webmasters.se] and questions about WordPress development and administration can be asked on [wordpress.se]. Please delete your question here and re-ask it in one of those more appropriate places.
 sites: stackoverflow
 tags: wordpress
 types: close-question, question
 socvr: Not programming, ask on Webmasters or WordPress
 
 # Closure: WordPress
-I voted to close this question because it is not a programming question. Questions about WordPress development and administration should be asked on [wordpress.se]. Please delete your question here and re-ask it there.
+I voted to close this question because it is not a programming question. Questions about WordPress development and administration can be asked on [wordpress.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
 tags: wordpress
 types: close-question, question
 socvr: Not programming, ask on WordPress
 
 # Closure: Drupal
-I voted to close this question because it is not a programming question. Questions about Drupal development and administration should be asked on [drupal.se]. Please delete your question here and re-ask it there.
+I voted to close this question because it is not a programming question. Questions about Drupal development and administration can be asked on [drupal.se]. Please delete your question here and re-ask it there.
 sites: stackoverflow
 tags: drupal, drupal-6, drupal-7, drupal-8, drupal-modules, drupal-views
 types: close-question, question
 socvr: Not programming, ask on Drupal
 
 # Closure: ServerFault
-I voted to close this question because it is not a programming question. Questions about managing your servers should be asked on [sf]. Please delete your question here and re-ask it there.
+I voted to close this question because it is not a programming question. Questions about managing your servers can be asked on [sf]. Please delete your question here and re-ask it there.
 sites: stackoverflow
 types: close-question, question
 socvr: Not programming, ask on ServerFault
