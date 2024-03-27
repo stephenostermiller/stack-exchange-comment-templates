@@ -1,10 +1,8 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
-// @version 1.15.2
+// @namespace http://ostermiller.org/
+// @version 1.15.3
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
-// @namespace https://github.com/stephenostermiller/stack-exchange-comment-templates
-// @updateURL https://github.com/stephenostermiller/stack-exchange-comment-templates/raw/master/context-menu.meta.js
-// @downloadURL https://github.com/stephenostermiller/stack-exchange-comment-templates/raw/master/context-menu.user.js
 // @match https://*.stackexchange.com/questions/*
 // @match https://*.stackexchange.com/review/*
 // @match https://*.stackexchange.com/admin/*
@@ -313,12 +311,12 @@
 	// outer translucent lightbox background that covers the whole page
 	var ctcmo = $('<div id=ctcm-back>').append(ctcmi)
 	GM_addStyle("#ctcm-back{z-index:999998;display:none;position:fixed;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,.5)}")
-	GM_addStyle("#ctcm-menu{z-index:999999;min-width:320px;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--white);border:5px solid var(--theme-header-foreground-color);padding:1em;max-width:100%;max-height:100%;overflow:auto}")
+	GM_addStyle("#ctcm-menu{z-index:999999;min-width:320px;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--white);border:5px solid var(--theme-header-foreground-color);padding:1em;max-width:100vw;max-height:100vh;overflow:auto}")
 	GM_addStyle(".ctcm-body{display:none;background:var(--black-050);padding:.3em;cursor: pointer;")
 	GM_addStyle(".ctcm-expand{float:right;cursor: pointer;}")
 	GM_addStyle(".ctcm-title{margin-top:.3em;cursor: pointer;}")
-	GM_addStyle("#ctcm-menu textarea{width:90%;min-width:300px;max-width:1000px;height:60vh;resize:both;display:block}")
-	GM_addStyle("#ctcm-menu input[type='text']{width:90%;min-width:300px;max-width:1000px;display:block}")
+	GM_addStyle("#ctcm-menu textarea{width:90vw;min-width:300px;max-width:1000px;height:60vh;resize:both;display:block}")
+	GM_addStyle("#ctcm-menu input[type='text']{width:90vw;min-width:300px;max-width:1000px;display:block}")
 	GM_addStyle("#ctcm-menu button{margin-top:1em;margin-right:.5em}")
 	GM_addStyle("#ctcm-menu button.right{float:right}")
 	GM_addStyle("#ctcm-menu h3{margin:.5em auto;font-size: 150%;}")
@@ -333,18 +331,20 @@
 		// Most of these rules use properties of the node or the node's parents
 		// to deduce their context
 
-		if (node.is('.js-rejection-reason-custom')) return "reject-edit"
-		if (node.parents('.js-comment-flag-option').length) return "flag-comment"
-		if (node.parents('.js-flagged-post').length){
-			if (/decline/.exec(node.attr('placeholder'))) return "decline-flag"
-			else return "helpful-flag"
-		}
+		if (!node.is('.js-comment-text-input,.js-comments-menu')){
+			if (node.is('.js-rejection-reason-custom')) return "reject-edit"
+			if (node.parents('.js-comment-flag-option').length) return "flag-comment"
+			if (node.parents('.js-flagged-post').length){
+				if (/decline/.exec(node.attr('placeholder'))) return "decline-flag"
+				else return "helpful-flag"
+			}
 
-		if (node.parents('.site-specific-pane').length) prefix = "close-"
-		else if (node.parents('.mod-attention-subform').length) prefix = "flag-"
-		else if (node.is('.edit-comment,#edit-comment')) prefix = "edit-"
-		else if(node.is('.js-comment-text-input')) prefix = ""
-		else return null
+			if (node.parents('.site-specific-pane').length) prefix = "close-"
+			else if (node.parents('.mod-attention-subform').length) prefix = "flag-"
+			else if (node.is('.edit-comment,#edit-comment')) prefix = "edit-"
+			else if(node.is('.js-comment-text-input')) prefix = ""
+			else return null
+		}
 
 		if (node.parents('#question,.question').length) return prefix + "question"
 		if (node.parents('#answers,.answer').length) return prefix + "answer"
@@ -361,14 +361,14 @@
 	// and are unlikely to use this tool, no need to identify them
 	// and give them special behavior.
 	// Maybe add a class for staff in the future?
-	var userClass
+	var userclass
 	function getUserClass(){
-		if (!userClass){
-			if ($('.js-mod-inbox-button').length) userClass="moderator"
-			else if ($('.s-topbar--item.s-user-card').length) userClass="user"
-			else userClass="anonymous"
+		if (!userclass){
+			if ($('.js-mod-inbox-button').length) userclass="moderator"
+			else if ($('.s-topbar--item.s-user-card').length) userclass="user"
+			else userclass="anonymous"
 		}
-		return userClass
+		return userclass
 	}
 
 	// The Stack Exchange site this is run on (just the subdomain, eg "stackoverflow")
@@ -413,6 +413,7 @@
 		return n.replace(/ /g,"")
 	}
 
+
 	// The full host name of the Stack Exchange site
 	function getSiteUrl(){
 		return location.hostname
@@ -425,12 +426,7 @@
 	// Insert the comment template into the text field
 	// called when a template is clicked in the dialog box
 	// so "this" refers to the clicked item
-	function insertComment(event){
-		if (event) {
-			event.stopImmediatePropagation()
-			event.preventDefault()
-			event.stopPropagation()
-		}
+	function insertComment(){
 		// The comment to insert is stored in a div
 		// near the item that was clicked
 		var body = $(this).parent().children('.ctcm-body')
@@ -453,7 +449,6 @@
 		if (typeHereInd >= 0) commentTextField[0].setSelectionRange(typeHereInd, typeHereInd + typeHere.length)
 
 		closeMenu()
-		return false
 	}
 
 	// User clicked on the expand icon in the dialog
@@ -683,7 +678,7 @@
 	// Hook into clicks for the entire page that should show a context menu
 	// Only handle the clicks on comment input areas (don't prevent
 	// the context menu from appearing in other places.)
-	$(document).contextmenu(async function(e){
+	$(document).contextmenu(function(e){
 		var target = $(e.target)
 		if (target.is('.comments-link')){
 			// The "Add a comment" link
@@ -698,11 +693,13 @@
 			// Suggested edit review queue - reject
 			target.trigger('click')
 			$('button.js-review-submit').trigger('click')
-			awaitSteps([
+			setTimeout(function(){
 				// Click "causes harm"
-				{target:()=>$('#rejection-reason-0'), action:target=>target.trigger('click')},
-				{target:prev=>prev.parents('.flex--item').find('textarea'), action:target=>showMenu(target)}
-			])
+				$('#rejection-reason-0').trigger('click')
+			},100)
+			setTimeout(function(){
+				showMenu($('#rejection-reason-0').parents('.flex--item').find('textarea'))
+			},200)
 			e.preventDefault()
 			return false
 		} else if (target.closest('#review-action-Unsalvageable,label[for="review-action-Unsalvageable"]').length){
@@ -722,11 +719,13 @@
 		} else if (target.closest('.js-comment-flag').length){
 			// The flag icon next to a comment
 			target.trigger('click')
-			awaitSteps([
+			setTimeout(function(){
 				// Click "Something else"
-				{target:()=>$('#comment-flag-type-CommentOther').prop('checked',true).parents('.js-comment-flag-option').find('.js-required-comment'), action:target=>target.removeClass('d-none')},
-				{target:prev=>prev.parents('.js-comment-flag-option').find('textarea'), action:target=>showMenu(target)}
-			])
+				$('#comment-flag-type-CommentOther').prop('checked',true).parents('.js-comment-flag-option').find('.js-required-comment').removeClass('d-none')
+			},100)
+			setTimeout(function(){
+				showMenu($('#comment-flag-type-CommentOther').parents('.js-comment-flag-option').find('textarea'))
+			},200)
 			e.preventDefault()
 			return false
 		} else if (target.closest('#review-action-Close,label[for="review-action-Close"],#review-action-NeedsAuthorEdit,label[for="review-action-NeedsAuthorEdit"]').length){
@@ -755,38 +754,28 @@
 		}
 	})
 
-	// https://stackoverflow.com/a/47092642
-	async function sleep(msec) {
-		return new Promise(resolve => setTimeout(resolve, msec));
+	function showMenuInFlagDialog(){
+		// Wait for the popup
+		setTimeout(function(){
+			$('input[value="PostOther"]').trigger('click')
+		},100)
+		setTimeout(function(){
+			showMenu($('input[value="PostOther"]').parents('label').find('textarea'))
+		},200)
 	}
 
-	async function awaitSteps(steps){
-		var prev
-		for (var i=0; i<steps.length; i++){
-			var target = null
-			do {
-				await sleep(50);
-				target = steps[i].target(prev)
-			} while (target.length==0)
-			prev=target
-			steps[i].action(target)
-		}
+	function showMenuInCloseDialog(){
+		setTimeout(function(){
+			$('#closeReasonId-SiteSpecific').trigger('click')
+		},100)
+		setTimeout(function(){
+			$('#siteSpecificCloseReasonId-other').trigger('click')
+		},200)
+		setTimeout(function(){
+			showMenu($('#siteSpecificCloseReasonId-other').parents('.js-popup-radio-action').find('textarea'))
+		},300)
 	}
 
-	async function showMenuInFlagDialog(){
-		awaitSteps([
-			{target:()=>$('input[value="PostOther"]'), action:target=>target.trigger('click')},
-			{target:prev=>prev.parents('label').find('textarea'), action:target=>showMenu(target)}
-		])
-	}
-
-	async function showMenuInCloseDialog(){
-		awaitSteps([
-			{target:()=>$('#closeReasonId-SiteSpecific'), action:target=>target.trigger('click')},
-			{target:()=>$('#siteSpecificCloseReasonId-other'), action:target=>target.trigger('click')},
-			{target:prev=>prev.parents('.js-popup-radio-action').find('textarea'), action:target=>showMenu(target)}
-		])
-	}
 	function filterComments(e){
 		if (e.key === "Enter") {
 			// Pressing enter in the comment filter
@@ -835,7 +824,7 @@
 		ctcmi.append($('<button>Edit</button>').click(editComments))
 		ctcmi.append($('<button>Cancel</button>').click(closeMenu))
 		ctcmi.append($('<button class=right>').text(info).click(showInfo))
-		target.parents('.popup,#modal-base,.js-modal-dialog,.modal-description,body').first().append(ctcmo)
+		target.parents('.popup,#modal-base,body').first().append(ctcmo)
 		ctcmo.show()
 		filter.focus()
 	}
