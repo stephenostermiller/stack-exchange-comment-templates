@@ -5,7 +5,7 @@ If you are tired of typing the same comments into Stack Exchange sites over and 
 ## Installation
 
 1. Install a user script extension (such as [Tampermonkey](https://www.tampermonkey.net/)) for your browser.  [Greasy Fork](https://greasyfork.org/en) maintains a list of user script extensions that are available for various browsers.
-2. [Click here to install `context-menu.user.js`](https://github.com/stephenostermiller/stack-exchange-comment-templates/raw/master/context-menu.user.js) within your user script manager.
+2. [Click here to install `context-menu.user.js`](https://github.com/stephenostermiller/stack-exchange-comment-templates/raw/main/context-menu.user.js) within your user script manager.
 
 ## Getting started
 
