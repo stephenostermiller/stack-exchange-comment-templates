@@ -524,7 +524,11 @@ Please use the standard close reason rather the "requires moderator attention" f
 types: decline-flag
 
 # Close as very low quality
-Use the VLQ flag on questions only for garbage posts that need immediate attention. For these posts, use the standard close reasons instead. See this answer: https://meta.stackoverflow.com/a/265764
+Use the VLQ flag on questions only for garbage posts that need immediate attention. For these posts, use the standard close reasons instead. See: https://meta.stackoverflow.com/a/265764
+types: decline-flag
+
+# Questions never very low quality
+Questions should never be flagged as "very low quality". Other flags are always more appropriate. See https://meta.stackoverflow.com/a/357344
 types: decline-flag
 
 # Wait for edits queue
