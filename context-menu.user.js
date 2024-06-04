@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.15.3
+// @version 1.15.4
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @match https://*.stackexchange.com/questions/*
 // @match https://*.stackexchange.com/review/*
@@ -440,7 +440,7 @@
 		var cmt = body.text()
 
 		// Put in the comment
-		commentTextField.val(cmt).focus()
+		commentTextField.val(cmt).focus().trigger("change")
 
 		// highlight place for additional input,
 		// if specified in the template
@@ -742,7 +742,15 @@
 			showMenuInCloseDialog()
 			e.preventDefault()
 			return false
-		} else if (target.is('textarea,input[type="text"]') && (!target.val() || target.val() == target[0].defaultValue)){
+		} else if (target.is('.js-resolve-action')){
+            // Flag handling Helpul... or Decline.. link
+			target.trigger('click')
+			setTimeout(function(){
+				showMenu(target.closest('.js-flagged-post').find('.is-expanded input.js-feedback[type="text"]'))
+			},100)
+			e.preventDefault()
+			return false
+        } else if (target.is('textarea,input[type="text"]') && (!target.val() || target.val() == target[0].defaultValue)){
 			// A text field that is blank or hasn't been modified
 			var type = getType(target)
 			if (type){
@@ -849,4 +857,4 @@
 			return false
 		}
 	})
-})();
+})()
