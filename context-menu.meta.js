@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.15.4
+// @version 1.16.0
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @match https://*.stackexchange.com/questions/*
 // @match https://*.stackexchange.com/review/*

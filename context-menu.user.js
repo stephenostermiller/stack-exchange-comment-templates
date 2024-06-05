@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.15.4
+// @version 1.16.0
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @match https://*.stackexchange.com/questions/*
 // @match https://*.stackexchange.com/review/*
@@ -74,7 +74,7 @@
 		return userMap[s.toLowerCase().trim()]
 	}
 
-	var typeMapInput = "question,answer,edit-question,edit-answer,close-question,flag-comment,flag-question,flag-answer,decline-flag,helpful-flag,reject-edit"
+	var typeMapInput = "question,answer,edit-question,edit-answer,close-question,flag-comment,flag-question,flag-answer,decline-flag,helpful-flag,decline-flag-very-low-quality,helpful-flag-very-low-quality,decline-flag-not-an-answer,helpful-flag-not-an-answer,decline-flag-auto,helpful-flag-auto,decline-flag-plagiarism,helpful-flag-plagiarism,decline-flag-gai,helpful-flag-gai,decline-flag-sock,helpful-flag-sock,decline-flag-migration,helpful-flag-migration,decline-flag-custom,helpful-flag-custom,reject-edit"
 	var typeMap = makeFilterMap(typeMapInput)
 	typeMap.c = 'close-question'
 	typeMap.close = 'close-question'
@@ -335,10 +335,20 @@
 			if (node.is('.js-rejection-reason-custom')) return "reject-edit"
 			if (node.parents('.js-comment-flag-option').length) return "flag-comment"
 			if (node.parents('.js-flagged-post').length){
-				if (/decline/.exec(node.attr('placeholder'))) return "decline-flag"
-				else return "helpful-flag"
+                var type = /decline/.exec(node.attr('placeholder'))?"decline-flag":"helpful-flag"
+                var text = node.closest('.js-flagged-post').find('.js-flag-text').text()
+                if (/^Very low quality/.exec(text)) type += "-very-low-quality"
+                else if (/^Not an answe/.exec(text)) type += "-not-an-answer"
+                else if (/\(auto\)/.exec(text)) type += "-auto"
+                else if (/^Plagiarism/.exec(text)) type += "-plagiarism"
+                else if (/\b(generated|chatgpt|chatbot|gpt|gai|ai|aigc|llm)\b/i.exec(text)) type += "-gai"
+                else if (/\b(sock|sockpuppet)\b/i.exec(text)) type += "-sock"
+                else if (/\b(move|moved|migrate|migrated|belongs)\b/i.exec(text)) type += "-migration"
+                else type += "-custom"
+                console.log(text)
+                console.log(type)
+                return type
 			}
-
 			if (node.parents('.site-specific-pane').length) prefix = "close-"
 			else if (node.parents('.mod-attention-subform').length) prefix = "flag-"
 			else if (node.is('.edit-comment,#edit-comment')) prefix = "edit-"
@@ -462,7 +472,14 @@
 	// For a given comment, say whether it
 	// should be shown given the current context
 	function commentMatches(comment, type, user, site, tags){
-		if (comment.types && !comment.types[type]) return false
+		if (comment.types){
+            var isType = false
+            while(type){
+                if (comment.types[type]) isType = true
+                type = type.replace(/\-?[^\-]*$/,"")
+            }
+            if (!isType) return false
+        }
 		if (comment.users && !comment.users[user]) return false
 		if (comment.sites && !comment.sites[site]) return false
 		if (comment.tags){
@@ -815,7 +832,7 @@
 		ctcmi.html("")
 		var filter=$('<input type=text placeholder="filter... (type then press enter to insert the first comment)">').keyup(filterComments).change(filterComments)
 		ctcmi.append(filter)
-		for (var i=0; i<comments.length; i++){
+        for (var i=0; i<comments.length; i++){
 			if(commentMatches(comments[i], type, user, site, tags)){
 				ctcmi.append(
 					$('<div class=ctcm-comment>').append(
@@ -857,4 +874,4 @@
 			return false
 		}
 	})
-})()
+})();
