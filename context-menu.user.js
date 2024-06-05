@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.16.0
+// @version 1.16.1
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @match https://*.stackexchange.com/questions/*
 // @match https://*.stackexchange.com/review/*
@@ -338,15 +338,13 @@
                 var type = /decline/.exec(node.attr('placeholder'))?"decline-flag":"helpful-flag"
                 var text = node.closest('.js-flagged-post').find('.js-flag-text').text()
                 if (/^Very low quality/.exec(text)) type += "-very-low-quality"
-                else if (/^Not an answe/.exec(text)) type += "-not-an-answer"
+                else if (/^Not an answer/.exec(text)) type += "-not-an-answer"
                 else if (/\(auto\)/.exec(text)) type += "-auto"
                 else if (/^Plagiarism/.exec(text)) type += "-plagiarism"
                 else if (/\b(generated|chatgpt|chatbot|gpt|gai|ai|aigc|llm)\b/i.exec(text)) type += "-gai"
                 else if (/\b(sock|sockpuppet)\b/i.exec(text)) type += "-sock"
                 else if (/\b(move|moved|migrate|migrated|belongs)\b/i.exec(text)) type += "-migration"
                 else type += "-custom"
-                console.log(text)
-                console.log(type)
                 return type
 			}
 			if (node.parents('.site-specific-pane').length) prefix = "close-"
