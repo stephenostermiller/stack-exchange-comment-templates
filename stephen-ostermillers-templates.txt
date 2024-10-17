@@ -488,7 +488,7 @@ We do not delete questions once they have accrued answers, as the posted solutio
 types: decline-flag-custom
 
 # Closed duplicate, should ping
-Moderator flags must not be used to resolve wrong dupe closures. See this Q&A: https://meta.stackoverflow.com/q/291977. @ping the gold-badge user who closed the question in a comment to inform them.
+Moderator flags must not be used to resolve wrong dupe closures. See: https://meta.stackoverflow.com/q/291977. @ping the gold-badge user who closed the question in a comment to inform them.
 types: decline-flag-custom
 
 # Closed duplicate, should edit
@@ -552,15 +552,19 @@ Code-only answers are downvote-worthy, not flag-worthy. Please note that flags s
 types: decline-flag-not-an-answer,decline-flag-very-low-quality
 
 # Rhetorical, should edit
-Rhetorical questions must not be flagged; edit them and make them an answer instead. See this Q&A: http://meta.stackexchange.com/questions/131959
+Rhetorical questions must not be flagged; edit them and make them an answer instead. See: http://meta.stackexchange.com/questions/131959
 types: decline-flag-not-an-answer,decline-flag-very-low-quality
 
 # It attempts to answer
-Attempts at solving the initial question should not be flagged. See this Q&A: https://meta.stackoverflow.com/questions/265552/when-to-flag-an-answer-as-not-an-answer
+Attempts at solving the initial question should not be flagged. See: https://meta.stackoverflow.com/questions/265552/when-to-flag-an-answer-as-not-an-answer
 types: decline-flag-not-an-answer 
 
 # It isn't link-only
 The post is not a link-only answer. See the 3rd image here: https://meta.stackexchange.com/questions/225370/your-answer-is-in-another-castle-when-is-an-answer-not-an-answer
+types: decline-flag-not-an-answer,decline-flag-very-low-quality
+
+# "Not possible" is answer
+"It's not possible" is, in fact, an answer. If it isn't a high quality answer, use a down vote rather than a flag. See https://meta.stackoverflow.com/questions/333921/how-should-impossible-questions-be-handled
 types: decline-flag-not-an-answer,decline-flag-very-low-quality
 
 # Can't reveal votes
@@ -572,11 +576,11 @@ Moderators cannot accept/unaccept an answer on behalf of the original poster.
 types: decline-flag-custom
 
 # Serial down votes
-Serial downvotes are reversed automatically. See this Q&A: https://meta.stackoverflow.com/questions/252270. If they aren’t reversed after 36 hours, please flag again.
+Serial downvotes are reversed automatically. See: https://meta.stackoverflow.com/questions/252270. If they aren’t reversed after 36 hours, please flag again.
 types: decline-flag-custom
 
 # Serial up votes
-Serial upvotes are reversed automatically. See this Q&A: https://meta.stackoverflow.com/questions/252270. If they aren’t reversed after 36 hours, please flag again.
+Serial upvotes are reversed automatically. See: https://meta.stackoverflow.com/questions/252270. If they aren’t reversed after 36 hours, please flag again.
 types: decline-flag-custom
 
 # Bounty expires soon
