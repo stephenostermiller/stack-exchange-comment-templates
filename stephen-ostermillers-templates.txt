@@ -564,7 +564,7 @@ The post is not a link-only answer. See the 3rd image here: https://meta.stackex
 types: decline-flag-not-an-answer,decline-flag-very-low-quality
 
 # "Not possible" is answer
-"It's not possible" is, in fact, an answer. If it isn't a high quality answer, use a down vote rather than a flag. See https://meta.stackoverflow.com/questions/333921/how-should-impossible-questions-be-handled
+"It's not possible" is, in fact, an answer. If it isn't a high quality answer, use a down vote rather than a flag. See https://meta.stackoverflow.com/questions/333921/handle-impossible-questions
 types: decline-flag-not-an-answer,decline-flag-very-low-quality
 
 # Can't reveal votes
