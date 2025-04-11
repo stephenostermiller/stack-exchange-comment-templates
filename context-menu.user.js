@@ -24,6 +24,7 @@
 // @match https://*.stackapps.com/questions/*
 // @match https://*.stackapps.com/review/*
 // @match https://*.stackapps.com/admin/*
+// @match https://*.stackoverflow.com/*staging-ground/*
 // @connect raw.githubusercontent.com
 // @connect *
 // @grant GM_addStyle
@@ -356,6 +357,9 @@
 
 		if (node.parents('#question,.question').length) return prefix + "question"
 		if (node.parents('#answers,.answer').length) return prefix + "answer"
+
+		// Staging Ground
+		if (location.pathname.startsWith("/staging-ground") && node.is(".js-comment-text-input")) return "question"; 
 
 		// Fallback for single post edit page
 		if (node.parents('.post-form').find('h2:last').text()=='Question') return prefix + "question"
