@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Stack Exchange comment template context menu
 // @namespace http://ostermiller.org/
-// @version 1.16.1
+// @version 1.17.0
 // @description Adds a context menu (right click, long press, command click, etc) to comment boxes on Stack Exchange with customizable pre-written responses.
 // @match https://*.stackexchange.com/questions/*
 // @match https://*.stackexchange.com/review/*
@@ -336,17 +336,17 @@
 			if (node.is('.js-rejection-reason-custom')) return "reject-edit"
 			if (node.parents('.js-comment-flag-option').length) return "flag-comment"
 			if (node.parents('.js-flagged-post').length){
-                var type = /decline/.exec(node.attr('placeholder'))?"decline-flag":"helpful-flag"
-                var text = node.closest('.js-flagged-post').find('.js-flag-text').text()
-                if (/^Very low quality/.exec(text)) type += "-very-low-quality"
-                else if (/^Not an answer/.exec(text)) type += "-not-an-answer"
-                else if (/\(auto\)/.exec(text)) type += "-auto"
-                else if (/^Plagiarism/.exec(text)) type += "-plagiarism"
-                else if (/\b(generated|chatgpt|chatbot|gpt|gai|ai|aigc|llm)\b/i.exec(text)) type += "-gai"
-                else if (/\b(sock|sockpuppet)\b/i.exec(text)) type += "-sock"
-                else if (/\b(move|moved|migrate|migrated|belongs)\b/i.exec(text)) type += "-migration"
-                else type += "-custom"
-                return type
+				var type = /decline/.exec(node.attr('placeholder'))?"decline-flag":"helpful-flag"
+				var text = node.closest('.js-flagged-post').find('.js-flag-text').text()
+				if (/^Very low quality/.exec(text)) type += "-very-low-quality"
+				else if (/^Not an answer/.exec(text)) type += "-not-an-answer"
+				else if (/\(auto\)/.exec(text)) type += "-auto"
+				else if (/^Plagiarism/.exec(text)) type += "-plagiarism"
+				else if (/\b(generated|chatgpt|chatbot|gpt|gai|ai|aigc|llm)\b/i.exec(text)) type += "-gai"
+				else if (/\b(sock|sockpuppet)\b/i.exec(text)) type += "-sock"
+				else if (/\b(move|moved|migrate|migrated|belongs)\b/i.exec(text)) type += "-migration"
+				else type += "-custom"
+				return type
 			}
 			if (node.parents('.site-specific-pane').length) prefix = "close-"
 			else if (node.parents('.mod-attention-subform').length) prefix = "flag-"
@@ -359,7 +359,7 @@
 		if (node.parents('#answers,.answer').length) return prefix + "answer"
 
 		// Staging Ground
-		if (location.pathname.startsWith("/staging-ground") && node.is(".js-comment-text-input")) return "question"; 
+		if (location.pathname.startsWith("/staging-ground") && node.is(".js-comment-text-input")) return "question";
 
 		// Fallback for single post edit page
 		if (node.parents('.post-form').find('h2:last').text()=='Question') return prefix + "question"
@@ -452,7 +452,7 @@
 		var cmt = body.text()
 
 		// Put in the comment
-		commentTextField.val(cmt).focus().trigger("change")
+		commentTextField.val(cmt).focus().trigger("change").trigger("input")
 
 		// highlight place for additional input,
 		// if specified in the template
@@ -475,13 +475,13 @@
 	// should be shown given the current context
 	function commentMatches(comment, type, user, site, tags){
 		if (comment.types){
-            var isType = false
-            while(type){
-                if (comment.types[type]) isType = true
-                type = type.replace(/\-?[^\-]*$/,"")
-            }
-            if (!isType) return false
-        }
+			var isType = false
+			while(type){
+				if (comment.types[type]) isType = true
+				type = type.replace(/\-?[^\-]*$/,"")
+			}
+			if (!isType) return false
+		}
 		if (comment.users && !comment.users[user]) return false
 		if (comment.sites && !comment.sites[site]) return false
 		if (comment.tags){
@@ -762,14 +762,14 @@
 			e.preventDefault()
 			return false
 		} else if (target.is('.js-resolve-action')){
-            // Flag handling Helpul... or Decline.. link
+			// Flag handling Helpul... or Decline.. link
 			target.trigger('click')
 			setTimeout(function(){
 				showMenu(target.closest('.js-flagged-post').find('.is-expanded input.js-feedback[type="text"]'))
 			},100)
 			e.preventDefault()
 			return false
-        } else if (target.is('textarea,input[type="text"]') && (!target.val() || target.val() == target[0].defaultValue)){
+		} else if (target.is('textarea,input[type="text"]') && (!target.val() || target.val() == target[0].defaultValue)){
 			// A text field that is blank or hasn't been modified
 			var type = getType(target)
 			if (type){
@@ -778,6 +778,12 @@
 				e.preventDefault()
 				return false
 			}
+		} else if (target.closest('.js-reply-bar').length){
+			// "Add a comment" button
+			target.trigger('click')
+			showMenu(target.closest('.js-reply-bar').parent().find('.js-comment-text-input'))
+			e.preventDefault()
+			return false
 		}
 	})
 
@@ -834,7 +840,7 @@
 		ctcmi.html("")
 		var filter=$('<input type=text placeholder="filter... (type then press enter to insert the first comment)">').keyup(filterComments).change(filterComments)
 		ctcmi.append(filter)
-        for (var i=0; i<comments.length; i++){
+		for (var i=0; i<comments.length; i++){
 			if(commentMatches(comments[i], type, user, site, tags)){
 				ctcmi.append(
 					$('<div class=ctcm-comment>').append(
